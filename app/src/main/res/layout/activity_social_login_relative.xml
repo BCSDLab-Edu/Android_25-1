@@ -23,7 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/edittext_social_login_password"
         android:layout_marginHorizontal="20dp"
-        android:hint="아이디"/>
+        android:hint="아이디"
+        />
 
     <EditText
         android:id="@+id/edittext_social_login_password"
@@ -31,7 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_marginHorizontal="20dp"
-        android:hint="비밀번호"/>
+        android:hint="비밀번호"
+        />
 
     <Button
         android:id="@+id/button_social_login_login"

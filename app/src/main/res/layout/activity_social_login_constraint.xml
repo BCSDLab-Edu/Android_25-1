@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fcf7fe"
@@ -39,7 +38,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
     <Button
         android:id="@+id/button_social_login_login"
@@ -48,7 +48,8 @@
         android:text="로그인"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edittext_social_login_password" />
+        app:layout_constraintTop_toBottomOf="@id/edittext_social_login_password"
+        />
 
     <ImageButton
         android:id="@+id/imagebutton_social_login_google"
@@ -88,7 +89,6 @@
         android:layout_margin="10dp"
         app:layout_constraintLeft_toRightOf="@id/imagebutton_social_login_naver"
         app:layout_constraintTop_toBottomOf="@id/button_social_login_login"
-
         />
 
     <Button
@@ -105,7 +105,6 @@
         android:textColor="#000000"
         app:layout_constraintLeft_toLeftOf="@id/imagebutton_social_login_google"
         app:layout_constraintTop_toBottomOf="@id/imagebutton_social_login_google"
-
         />
 
     <Button
@@ -123,6 +122,5 @@
         app:layout_constraintRight_toRightOf="@id/imagebutton_social_login_kakao"
         app:layout_constraintTop_toBottomOf="@id/imagebutton_social_login_kakao"
         />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
