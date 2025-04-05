@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF4F4"
+    android:padding="24dp">
+
+    <!-- 🔹 로그인 제목 -->
+    <TextView
+        android:id="@+id/tvLoginTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"/>
+
+    <!-- 🔹 이메일 입력창 -->
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="이메일"
+        android:padding="12dp"
+        android:layout_below="@id/tvLoginTitle"
+        android:layout_marginTop="24dp"/>
+
+    <!-- 🔹 비밀번호 입력창 -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호"
+        android:padding="12dp"
+        android:inputType="textPassword"
+        android:layout_below="@id/etEmail"
+        android:layout_marginTop="16dp"/>
+
+    <!-- 🔹 로그인 버튼 -->
+
+    <!-- 🔹 소셜 로그인 (Google, Naver, Kakao) -->
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#6200EE"
+        android:layout_below="@id/etPassword"
+        android:layout_marginTop="24dp"
+        android:layout_centerHorizontal="true"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:minWidth="200dp"/>
+
+
+    <LinearLayout
+        android:id="@+id/socialLoginLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnLogin"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="Google 로그인"
+            android:src="@drawable/ic_logo_google" />
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:contentDescription="Naver 로그인"
+            android:src="@drawable/ic_logo_naver" />
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:contentDescription="Kakao 로그인"
+            android:src="@drawable/ic_logo_kakao" />
+    </LinearLayout>
+
+    <!-- 🔹 "비밀번호 찾기" & "가입하기" (맨 아래 정렬) -->
+    <LinearLayout
+        android:layout_width="364dp"
+        android:layout_height="341dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="84dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginEnd="16dp"
+            android:text="비밀번호 찾기"
+            android:textColor="#666666"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="93dp"
+            android:layout_height="30dp"
+            android:text="가입하기"
+            android:textColor="#666666"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</RelativeLayout>
