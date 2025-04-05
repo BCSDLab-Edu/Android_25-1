@@ -1,0 +1,138 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF4F4"
+    android:padding="24dp">
+
+    <!-- 🔹 로그인 제목 -->
+
+    <!-- 🔹 이메일 입력창 -->
+
+    <!-- 🔹 비밀번호 입력창 -->
+
+    <TextView
+        android:id="@+id/tvLoginTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="로그인"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_margin="100dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 🔹 로그인 버튼 (가운데 정렬 & 너비 조정) -->
+
+    <!-- 🔹 소셜 로그인 (Google, Naver, Kakao) -->
+
+    <!-- 🔹 "비밀번호 찾기" & "가입하기" (맨 아래 정렬) -->
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:text="가입하기"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="172dp"
+        tools:layout_editor_absoluteY="389dp" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:text="비밀번호 찾기"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="392dp" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="363dp"
+        android:layout_height="wrap_content"
+        android:hint="이메일"
+        android:padding="12dp"
+        app:layout_constraintTop_margin="24dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="161dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="비밀번호"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/etEmail" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#6200EE"
+        android:minWidth="200dp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:text="로그인"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_margin="24dp"
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="277dp"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/socialLoginLayout"
+        android:layout_width="185dp"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_margin="16dp"
+        tools:layout_editor_absoluteX="89dp"
+        tools:layout_editor_absoluteY="323dp"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="51dp"
+            android:layout_height="match_parent"
+            android:contentDescription="Google 로그인"
+            android:src="@drawable/ic_logo_google" />
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:contentDescription="Naver 로그인"
+            android:src="@drawable/ic_logo_naver" />
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="Kakao 로그인"
+            android:src="@drawable/ic_logo_kakao" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_margin="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
