@@ -7,7 +7,7 @@
 
 
     <TextView
-        android:id="@+id/titleText"
+        android:id="@+id/title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="로그인"
@@ -20,7 +20,7 @@
 
 
     <EditText
-        android:id="@+id/emailInput"
+        android:id="@+id/email_input"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
@@ -32,18 +32,18 @@
         android:paddingBottom="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleText" />
+        app:layout_constraintTop_toBottomOf="@id/title_text" />
 
 
     <EditText
-        android:id="@+id/passwordInput"
+        android:id="@+id/password_input"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:hint="비밀번호"
         android:inputType="textPassword"
         android:backgroundTint="#673AB7"
         android:paddingBottom="15dp"
-        app:layout_constraintTop_toBottomOf="@id/emailInput"
+        app:layout_constraintTop_toBottomOf="@id/email_input"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="20dp"
@@ -52,12 +52,12 @@
 
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="로그인"
         android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@id/passwordInput"
+        app:layout_constraintTop_toBottomOf="@id/password_input"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="30dp" />
@@ -68,13 +68,13 @@
 
 
     <ImageView
-        android:id="@+id/iconGoogle"
+        android:id="@+id/icon_google"
         android:layout_width="40dp"
         android:layout_height="40dp"
         app:srcCompat="@drawable/ic_logo_google"
-        app:layout_constraintTop_toBottomOf="@id/loginButton"
+        app:layout_constraintTop_toBottomOf="@id/login_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/iconNaver"
+        app:layout_constraintEnd_toStartOf="@id/icon_naver"
         app:layout_constraintHorizontal_chainStyle="packed"
         android:layout_marginTop="28dp"
 
@@ -82,49 +82,47 @@
 
 
     <ImageView
-        android:id="@+id/iconNaver"
+        android:id="@+id/icon_naver"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        app:srcCompat="@drawable/ic_logo_naver"
-        app:layout_constraintTop_toBottomOf="@id/loginButton"
-        app:layout_constraintStart_toEndOf="@id/iconGoogle"
-        app:layout_constraintEnd_toStartOf="@id/iconKakao"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        />
-
+        app:layout_constraintEnd_toStartOf="@id/icon_kakao"
+        app:layout_constraintStart_toEndOf="@id/icon_google"
+        app:layout_constraintTop_toBottomOf="@id/login_button"
+        app:srcCompat="@drawable/ic_logo_naver" />
 
     <ImageView
-        android:id="@+id/iconKakao"
+        android:id="@+id/icon_kakao"
         android:layout_width="40dp"
         android:layout_height="40dp"
         app:srcCompat="@drawable/ic_logo_kakao"
-        app:layout_constraintTop_toBottomOf="@id/loginButton"
-        app:layout_constraintStart_toEndOf="@id/iconNaver"
+        app:layout_constraintTop_toBottomOf="@id/login_button"
+        app:layout_constraintStart_toEndOf="@id/icon_naver"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="28dp"
         />
 
 
     <TextView
-        android:id="@+id/findPasswordText"
+        android:id="@+id/find_password_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="비밀번호 찾기"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/iconGoogle"
-        app:layout_constraintTop_toBottomOf="@id/iconGoogle" />
+        app:layout_constraintStart_toStartOf="@+id/icon_google"
+        app:layout_constraintTop_toBottomOf="@id/icon_google" />
 
     <TextView
-        android:id="@+id/joinText"
+        android:id="@+id/join_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="가입하기"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/iconKakao"
-        app:layout_constraintTop_toBottomOf="@id/iconNaver"/>
+        app:layout_constraintEnd_toEndOf="@+id/icon_kakao"
+        app:layout_constraintTop_toBottomOf="@id/icon_naver"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

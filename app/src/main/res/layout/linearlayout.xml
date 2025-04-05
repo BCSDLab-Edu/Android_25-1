@@ -10,7 +10,7 @@
     >
 
     <TextView
-        android:id="@+id/titleText"
+        android:id="@+id/title_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="32sp"
@@ -20,7 +20,7 @@
         android:gravity="center" />
 
     <EditText
-        android:id="@+id/emailInput"
+        android:id="@+id/email_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -33,7 +33,7 @@
         android:padding="15dp"/>
 
     <EditText
-        android:id="@+id/passwordInput"
+        android:id="@+id/password_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -45,7 +45,7 @@
         android:padding="15dp"/>
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -64,21 +64,21 @@
         android:layout_marginBottom="20dp">
 
         <ImageView
-            android:id="@+id/iconGoogle"
+            android:id="@+id/icon_google"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginEnd="16dp"
             app:srcCompat="@drawable/ic_logo_google" />
 
         <ImageView
-            android:id="@+id/iconNaver"
+            android:id="@+id/icon_naver"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginEnd="16dp"
             app:srcCompat="@drawable/ic_logo_naver" />
 
         <ImageView
-            android:id="@+id/iconKakao"
+            android:id="@+id/icon_kakao"
             android:layout_width="40dp"
             android:layout_height="40dp"
             app:srcCompat="@drawable/ic_logo_kakao" />
@@ -93,14 +93,14 @@
         android:gravity="center">
 
         <TextView
-            android:id="@+id/findPasswordText"
+            android:id="@+id/find_password_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="비밀번호 찾기"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/joinText"
+            android:id="@+id/join_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="가입하기"
