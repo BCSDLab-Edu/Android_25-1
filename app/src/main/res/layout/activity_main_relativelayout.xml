@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/textview_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="160dp" />
+
+    <EditText
+        android:id="@+id/edit_text_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="아이디"
+        android:textSize="16sp"
+        android:paddingBottom="12dp"
+        android:layout_below="@id/textview_login"
+        android:layout_marginTop="80dp" />
+
+    <EditText
+        android:id="@+id/edit_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호"
+        android:textSize="16sp"
+        android:paddingBottom="12dp"
+        android:layout_below="@id/edit_text_id"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:layout_below="@id/edit_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
+
+    <ImageView
+        android:id="@+id/imageview_google"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_logo_google"
+        android:layout_below="@id/button_login"
+        android:layout_toLeftOf="@id/imageview_naver"
+        android:layout_marginTop="12dp" />
+
+    <ImageView
+        android:id="@+id/imageview_naver"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_logo_naver"
+        android:layout_below="@id/button_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp" />
+
+    <ImageView
+        android:id="@+id/imageview_kakao"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@drawable/ic_logo_kakao"
+        android:layout_below="@id/button_login"
+        android:layout_toRightOf="@id/imageview_naver"
+        android:layout_marginTop="12dp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageview_google"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp">
+
+    <TextView
+        android:id="@+id/textview_find_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 찾기"
+        android:textSize="12sp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/textview_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가입하기"
+        android:textSize="12sp"
+        android:layout_toRightOf="@id/textview_find_password"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="16dp" />
+</RelativeLayout>
