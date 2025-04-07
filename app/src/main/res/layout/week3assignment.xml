@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_sign_in_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="164dp"
+        android:layout_marginTop="106dp"
+        android:layout_marginEnd="164dp"
+        android:layout_marginBottom="54dp"
+        android:text="@string/sign_in"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:contentDescription="@string/sign_in_title"
+        app:layout_constraintBottom_toTopOf="@+id/et_sign_in_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_sign_in_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="162dp"
+        android:layout_marginBottom="17dp"
+        android:text="@string/btn_sign_in"
+        android:contentDescription="@string/btn_sign_in_button"
+        app:layout_constraintBottom_toTopOf="@+id/iv_naver_logo"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_naver_logo"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="@string/naver_logo"
+        android:importantForAutofill="no"
+        app:layout_constraintBottom_toTopOf="@+id/tv_sign_in_find"
+        app:layout_constraintStart_toEndOf="@+id/iv_google_logo"
+        app:srcCompat="@drawable/ic_logo_naver"
+        tools:ignore="ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/iv_kakao_logo"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="@string/kakao_logo"
+        app:layout_constraintBottom_toTopOf="@+id/tv_sign_in_sign_up"
+        app:layout_constraintStart_toEndOf="@+id/iv_naver_logo"
+        app:srcCompat="@drawable/ic_logo_kakao" />
+
+    <ImageView
+        android:id="@+id/iv_google_logo"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="@string/google_logo"
+        android:importantForAutofill="no"
+        app:layout_constraintBottom_toTopOf="@+id/tv_sign_in_find"
+        app:layout_constraintEnd_toStartOf="@+id/iv_naver_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_logo_google" />
+
+    <EditText
+        android:id="@+id/et_sign_in_email"
+        android:layout_width="331dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        android:text="@string/user_id"
+        android:textColor="#795548"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sign_in_title"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/tv_sign_in_find"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginBottom="268dp"
+        android:text="@string/forgot_password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_sign_in_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginBottom="268dp"
+        android:autofillHints=""
+        android:importantForAutofill="no"
+        android:text="@string/signup"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_sign_in_find" />
+
+    <EditText
+        android:id="@+id/et_sign_in_password"
+        android:layout_width="331dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="40dp"
+        android:ems="10"
+        android:hint="@string/user_password"
+        android:inputType="textPassword"
+        android:textColorHint="#795548"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_sign_in_email"
+        tools:ignore="Autofill" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

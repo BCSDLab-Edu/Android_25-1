@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+
+    <string name="sign_in">로그인</string>
+    <string name="sign_in_title">로그인 타이틀</string>
+    <string name="user_id">아이디</string>
+    <string name="user_password">비밀번호</string>
+    <string name="btn_sign_in">로그인</string>
+    <string name="btn_sign_in_button">로그인 버튼</string>
+    <string name="forgot_password">비밀번호 찾기</string>
+    <string name="signup">회원가입</string>
+    <string name="google_logo">구글 로그인</string>
+    <string name="naver_logo">네이버 로그인</string>
+    <string name="kakao_logo">카카오톡 로그인</string>
+
+
 </resources>
