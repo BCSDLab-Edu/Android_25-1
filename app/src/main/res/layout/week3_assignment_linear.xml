@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/textview_login_beginner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="80dp">
+    </TextView>
+
+    <EditText
+        android:id="@+id/edittext_login_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="아이디">
+    </EditText>
+
+    <EditText
+        android:id="@+id/edittext_login_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호">
+    </EditText>
+
+    <Button
+        android:id="@+id/button_login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:gravity="center">
+    </Button>
+
+    <LinearLayout
+        android:id="@+id/layout_login_social"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imagebutton_login_google"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_logo_google"
+            android:layout_marginEnd="10dp">
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/imagebutton_login_naver"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_logo_naver"
+            android:layout_marginEnd="10dp">
+        </ImageButton>
+
+        <ImageButton
+            android:id="@+id/imagebutton_login_kakao"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_logo_kakao">
+        </ImageButton>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textview_login_another"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 찾기 | 가입하기"
+        android:textSize="12sp">
+    </TextView>
+
+</LinearLayout>
