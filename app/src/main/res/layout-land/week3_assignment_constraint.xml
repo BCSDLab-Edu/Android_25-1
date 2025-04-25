@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp">
-
+    
     <TextView
         android:id="@+id/textview_login_beginner"
         android:layout_width="wrap_content"
@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="180dp"/>
+        android:layout_marginTop="50dp"/>
 
     <EditText
         android:id="@+id/edittext_login_id"
@@ -25,7 +25,9 @@
         app:layout_constraintTop_toBottomOf="@id/textview_login_beginner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="80dp"/>
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"/>
 
     <EditText
         android:id="@+id/edittext_login_password"
@@ -34,7 +36,9 @@
         android:hint="@string/password_hint"
         app:layout_constraintTop_toBottomOf="@id/edittext_login_id"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"/>
 
     <Button
         android:id="@+id/button_login_button"
@@ -76,7 +80,6 @@
         app:layout_constraintStart_toEndOf="@id/imagebutton_login_naver"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-
     <TextView
         android:id="@+id/textview_login_findpassword"
         android:layout_width="wrap_content"
@@ -110,6 +113,5 @@
         app:layout_constraintTop_toBottomOf="@id/imagebutton_login_google"
         app:layout_constraintStart_toEndOf="@id/textview_login_or"
         app:layout_constraintEnd_toEndOf="parent"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
