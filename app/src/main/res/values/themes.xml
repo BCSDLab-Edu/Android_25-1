@@ -1,8 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.BCSD_Android_20251" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/backColor</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/backColor</item>
     </style>
 
     <style name="Theme.BCSD_Android_20251" parent="Base.Theme.BCSD_Android_20251" />

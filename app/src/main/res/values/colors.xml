@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="backColor">#FCF7FE</color>
+    <color name="nullColor">"#00ff0000"</color>
+    <color name="buttonColor1">#6750A4</color>
+    <color name="hintColor1">#A2A0A0</color>
+    <color name="textColor1">#222222</color>
+    <color name="textColor2">#EADDFF</color>
+
+
+    <color name="gray">#A2A0A0</color>
+    <color name="darkGray">#212121</color>
+
+    <color name="purple_1">#EADDFF</color>
+    <color name="purple_2">#D0BCFF</color>
+    <color name="purple_3">#6750A4</color>
+    <color name="purple_4">#381E72</color>
+    <color name="purple_5">#21005D</color>
+    <color name="purple_gray_1">#E8DEF8</color>
+    <color name="purple_gray_2">#CCC2DC</color>
+    <color name="purple_gray_3">#625B71</color>
+    <color name="purple_gray_4">#332D41</color>
+    <color name="purple_gray_5">#1D192B</color>
+
+    <color name="warm_white">#FFFBFE</color>
+    <color name="light_black">#1C1B1F</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#222222</color>
 </resources>
+
