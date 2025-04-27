@@ -2,33 +2,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_Background"
     android:padding="32dp">
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.23" />
 
     <TextView
         android:id="@+id/titleLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="로그인"
+        android:layout_marginTop="52dp"
+        android:text="@string/title_login"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineTop"
+        android:textColor="@color/color_Title"
+        app:layout_constraintBottom_toTopOf="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editId"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:minHeight="55dp"
-        android:hint="아이디"
+        android:layout_height="55dp"
+        android:hint="@string/hint_id"
+        android:textColorHint="@color/color_Hint"
         app:layout_constraintTop_toBottomOf="@id/titleLogin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,9 +33,9 @@
     <EditText
         android:id="@+id/editPassword"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:minHeight="55dp"
-        android:hint="비밀번호"
+        android:layout_height="55dp"
+        android:hint="@string/hint_password"
+        android:textColorHint="@color/color_Hint"
         app:layout_constraintTop_toBottomOf="@id/editId"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -48,7 +44,9 @@
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="로그인"
+        android:text="@string/btn_login"
+        android:backgroundTint="@color/color_ButtonBackground"
+        android:textColor="@color/color_ButtonText"
         app:layout_constraintTop_toBottomOf="@id/editPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -86,7 +84,8 @@
         android:id="@+id/txtFindPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="비밀번호 찾기"
+        android:text="@string/find_password"
+        android:textColor="@color/color_Text"
         android:layout_marginEnd="10dp"
         app:layout_constraintTop_toBottomOf="@id/imgGoogle"
         app:layout_constraintStart_toStartOf="@id/imgGoogle"
@@ -97,7 +96,8 @@
         android:id="@+id/txtSignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="가입하기"
+        android:text="@string/sign_up"
+        android:textColor="@color/color_Text"
         app:layout_constraintTop_toTopOf="@id/txtFindPassword"
         app:layout_constraintStart_toEndOf="@id/txtFindPassword"
         app:layout_constraintEnd_toEndOf="@id/imgKakao" />

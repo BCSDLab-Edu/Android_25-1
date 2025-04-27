@@ -1,3 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="title_login">로그인</string>
+    <string name="hint_id">아이디</string>
+    <string name="hint_password">비밀번호</string>
+    <string name="btn_login">로그인</string>
+    <string name="find_password">비밀번호 찾기</string>
+    <string name="sign_up">가입하기</string>
 </resources>
