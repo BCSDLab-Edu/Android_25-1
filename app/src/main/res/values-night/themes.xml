@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.MyApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/t_200</item>
+        <item name="colorPrimaryVariant">@color/t_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="android:background">#121212</item> <!-- 배경 어둡게 -->
+        <item name="android:textColor">#FFFFFF</item> <!-- 글자 밝게 -->
+    </style>
+</resources>
