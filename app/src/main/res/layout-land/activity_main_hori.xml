@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#FFF4F4"
     android:padding="24dp"
-    tools:ignore="MissingClass">
+    tools:ignore="MissingDefaultResource">
 
     <!-- 로그인 제목 -->
     <TextView
@@ -33,7 +33,7 @@
         android:id="@+id/et_id"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="48dp"
         android:backgroundTint="#CCCCCC"
         android:hint="아이디"
         android:padding="12dp"
@@ -63,12 +63,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:backgroundTint="#6200EE"
+        android:backgroundTint="@color/green"
         android:minWidth="200dp"
         android:text="로그인"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_margin="24dp"
         app:layout_constraintTop_toBottomOf="@id/et_password" />
