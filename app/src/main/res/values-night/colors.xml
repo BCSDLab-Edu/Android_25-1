@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_color">#02231c</color>
+    <color name="login_color">#FFFF00</color>
+    <color name="id_color">#FFFF00</color>
+    <color name="login_button_color">#FFFF00</color>
+    <color name="login_button_background_color">#555f68</color>
+    <color name="password_color">#FFFF00</color>
+    <color name="join_passwrod_color">#FFFF00</color>
+    <color name="find_password_color">#FFFF00</color>
+</resources>
