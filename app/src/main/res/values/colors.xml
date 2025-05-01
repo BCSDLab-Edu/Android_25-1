@@ -3,4 +3,5 @@
     <color name="background">#FFFFFF</color>
     <color name="text">#000000</color>
     <color name="button">#FFFFFF</color>
+    <color name="line">#5D5D5D</color>
 </resources>
