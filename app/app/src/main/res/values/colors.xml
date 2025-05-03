@@ -5,5 +5,4 @@
     <color name="background">#FF000000</color>
     <color name="text">#FFFFFFFF</color>
     <color name="buttonColor">#493B6B</color>
-    <color name="hintColor">#8E8E8E</color>
 </resources>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textview_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="50dp"/>
+
+    <EditText
+        android:id="@+id/edittext_id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/id"
+        android:padding="12dp"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textview_login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"/>
+
+    <EditText
+        android:id="@+id/edittext_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        android:padding="12dp"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/edittext_id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"/>
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/buttonColor"
+        android:text="@string/login"
+        app:layout_constraintTop_toBottomOf="@id/edittext_password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <ImageView
+        android:id="@+id/imageview_naver"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/ic_logo_naver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/button_login" />
+
+    <ImageView
+        android:id="@+id/imageview_google"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/ic_logo_google"
+        app:layout_constraintEnd_toStartOf="@id/imageview_naver"
+        app:layout_constraintTop_toTopOf="@id/button_login" />
+
+    <ImageView
+        android:id="@+id/imageview_kakao"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/ic_logo_kakao"
+        app:layout_constraintStart_toEndOf="@id/imageview_naver"
+        app:layout_constraintTop_toTopOf="@id/button_login" />
+    <TextView
+        android:id="@+id/textview_find_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/findpassword"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="@id/imageview_google"
+        app:layout_constraintTop_toTopOf="@id/imageview_naver"
+        android:textSize="12sp" />
+    <TextView
+        android:id="@+id/textview_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/signup"
+        android:layout_marginTop="40dp"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/textview_find_password"
+        app:layout_constraintTop_toTopOf="@id/imageview_naver"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

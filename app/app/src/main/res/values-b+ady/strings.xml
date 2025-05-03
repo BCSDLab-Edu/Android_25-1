@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="app_name">BCSD3</string>
     <string name="login">Login</string>
     <string name="id">ID</string>
     <string name="password">Password</string>
