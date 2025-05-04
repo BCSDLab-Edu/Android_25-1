@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="login">Login</string>
+    <string name="id">ID</string>
+    <string name="password">Password</string>
+    <string name="signup">Sign Up</string>
+    <string name="findpw">Find PW</string>
+</resources>

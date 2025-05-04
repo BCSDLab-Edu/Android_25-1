@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="login">로그인</string>
+    <string name="id">아이디</string>
+    <string name="password">비밀번호</string>
+    <string name="signup">가입하기</string>
+    <string name="findpw">비밀번호 찾기</string>
 </resources>

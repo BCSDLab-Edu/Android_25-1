@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="backColor">#FCF7FE</color>
+    <color name="backColor">#212121</color>
     <color name="nullColor">"#00ff0000"</color>
-    <color name="buttonColor1">#6750A4</color>
+    <color name="buttonColor1">#D0BCFF</color>
     <color name="hintColor1">#A2A0A0</color>
-    <color name="textColor1">#222222</color>
-    <color name="textColor2">#EADDFF</color>
-
+    <color name="textColor1">#FFFFFF</color>
+    <color name="textColor2">#332D41</color>
 
     <color name="gray">#A2A0A0</color>
     <color name="darkGray">#212121</color>
@@ -28,4 +27,3 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#222222</color>
 </resources>
-
