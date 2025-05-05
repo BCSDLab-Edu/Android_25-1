@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
     private var count = 0
     private lateinit var countText: TextView
 
-    // Activity Result API 사용 (더 이상 onActivityResult 비추천)
     private val randomActivityLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
@@ -33,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         countText = findViewById(R.id.text_view)
 
         findViewById<Button>(R.id.button_toast).setOnClickListener {
-            Toast.makeText(this, "Toast!!!!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "우진업!!!", Toast.LENGTH_SHORT).show()
         }
 
         findViewById<Button>(R.id.button_count).setOnClickListener {

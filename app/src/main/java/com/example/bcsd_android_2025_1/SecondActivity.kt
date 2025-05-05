@@ -1,23 +1,20 @@
 package com.example.bcsd_android_2025_1
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import kotlin.random.Random
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
 class SecondActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val currentCount = intent.getIntExtra("CURRENT_COUNT", 0)
-        val randomValue = Random.nextInt(0, currentCount + 1)
-
-        val resultIntent = Intent().apply {
-            putExtra("RANDOM_VALUE", randomValue)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_second)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
         }
-        setResult(Activity.RESULT_OK, resultIntent)
-        finish()  // MainActivity로 돌아감
     }
 }
