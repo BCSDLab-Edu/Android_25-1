@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+
+    <string name="tv_main_num">0</string>
+    <string name="tv_main2_num">0</string>
+    <string name="btn_main_toast">Toast</string>
+    <string name="btn_main_count">Count</string>
+    <string name="btn_main_random">Random</string>
+
 </resources>
