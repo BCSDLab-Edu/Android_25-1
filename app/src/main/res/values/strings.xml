@@ -4,5 +4,5 @@
     <string name="text_count">COUNT</string>
     <string name="text_random">RANDOM</string>
     <string name="toast_message">꼬기꼬기물꼬기는어디어디어디에?</string>
-
+    <string name="text_information">Here is a random number between 0 and </string>
 </resources>

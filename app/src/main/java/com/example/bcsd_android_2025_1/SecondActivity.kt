@@ -23,16 +23,16 @@ class SecondActivity : AppCompatActivity() {
         val textviewSecondNumber: TextView = findViewById(R.id.textview_second_number)
         val textviewSecondInformation: TextView = findViewById(R.id.textview_second_information)
 
-        var information = "Here is a random number between 0 and "
 
+        val information = getString(R.string.text_information)
         var randomNumber = 0
 
 
         if (intent.hasExtra("countNumber")) {
             val count = intent.extras?.getInt("countNumber")!!
-            randomNumber = (0 until count).random()
+            randomNumber = (0 until count+1).random()
             textviewSecondNumber.text = randomNumber.toString()
-            textviewSecondInformation.text = information.plus(count.toString())
+            textviewSecondInformation.text = information.plus(" $count")
         }
 
 
