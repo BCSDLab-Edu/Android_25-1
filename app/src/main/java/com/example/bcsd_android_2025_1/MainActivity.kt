@@ -4,6 +4,7 @@ package com.example.bcsd_android_2025_1
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
+import androidx.activity.result.contract.ActivityResultContracts
 import android.widget.Toast
 import android.widget.TextView
 import android.content.Intent
@@ -30,14 +31,21 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        val randomResultLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == RESULT_OK) {
+                    val randomValue = result.data?.getIntExtra("random_value", 0) ?: 0
+                    count = randomValue
+                    countText.text = count.toString()
+                }
+            }
+
         randomButton.setOnClickListener {
             val intent = Intent(this@MainActivity, SecondActivity::class.java)
-            val randomValue = (0 until count).random()
-            count = randomValue
-            countText.text = count.toString()
             intent.putExtra("count_value", count)
-            startActivity(intent)
+            randomResultLauncher.launch(intent)
         }
+
 
 
     }
