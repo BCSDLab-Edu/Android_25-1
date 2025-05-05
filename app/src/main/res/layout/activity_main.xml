@@ -14,7 +14,7 @@
         android:background="@color/background"
         android:titleTextColor="@android:color/black"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:title="Main Activity"
+        app:title="My Activity"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         tools:ignore="MissingConstraints" />
 
