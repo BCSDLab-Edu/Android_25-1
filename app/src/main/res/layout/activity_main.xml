@@ -16,8 +16,8 @@
         android:paddingStart="16dp"
         android:text="My Application"
         android:textColor="#FFFFFF"
-
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <Button
         android:id="@+id/CountButton"

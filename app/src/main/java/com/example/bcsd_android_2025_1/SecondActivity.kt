@@ -12,7 +12,7 @@ class SecondActivity : AppCompatActivity() {
 
         val count = intent.getIntExtra("count_value", 0)
 
-        val randomValue = (0 until count).random()
+        val randomValue = (0 until count+1).random()
 
         val textView = findViewById<TextView>(R.id.Count)
         textView.text = "$randomValue"

@@ -4,13 +4,17 @@ package com.example.bcsd_android_2025_1
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import android.widget.Toast
 import android.widget.TextView
 import android.content.Intent
 
 
+
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var randomResultLauncher: ActivityResultLauncher<Intent>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         val randomButton = findViewById<Button>(R.id.RandomButton)
 
         toastButton.setOnClickListener {
-            Toast.makeText(this@MainActivity, "BCSD 화이팅", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@MainActivity, getString(R.string.toast_message), Toast.LENGTH_SHORT).show()
         }
         countButton.setOnClickListener {
             count++
@@ -31,8 +35,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        val randomResultLauncher =
-            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        randomResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
                 if (result.resultCode == RESULT_OK) {
                     val randomValue = result.data?.getIntExtra("random_value", 0) ?: 0
                     count = randomValue
