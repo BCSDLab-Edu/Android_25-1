@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+
+  <TextView
+      android:id="@+id/textViewMyApp"
+      android:layout_width="385dp"
+      android:layout_height="62dp"
+      android:background="#FFE082"
+      android:text="My First App"
+      android:textSize="30sp"
+      app:layout_constraintBottom_toTopOf="@+id/textViewCount"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.0" />
+
+  <TextView
+        android:id="@+id/textViewCount"
+        android:text="0"
+        android:textSize="48sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/count"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="40dp" />
+
+
+    <Button
+        android:id="@+id/toast"
+        android:text="TOAST"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCount"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/count" />
+
+
+    <Button
+        android:id="@+id/count"
+        android:text="COUNT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/toast"
+        app:layout_constraintEnd_toStartOf="@+id/random"
+        app:layout_constraintBottom_toBottomOf="@+id/toast"
+        app:layout_constraintTop_toTopOf="@+id/toast" />
+
+
+    <Button
+        android:id="@+id/random"
+        android:text="RANDOM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/toast"
+        app:layout_constraintTop_toTopOf="@+id/toast"
+        android:layout_marginStart="8dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
