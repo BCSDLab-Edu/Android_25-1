@@ -31,7 +31,7 @@ class FirstActivity : AppCompatActivity() {
         val randomButton = findViewById<Button>(R.id.random)
 
         toastButton.setOnClickListener {
-            Toast.makeText(this, "Hello from Toast!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Hello World", Toast.LENGTH_SHORT).show()
         }
 
         countButton.setOnClickListener {
