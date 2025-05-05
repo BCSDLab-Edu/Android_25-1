@@ -7,13 +7,68 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_login_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        android:titleTextColor="@android:color/black"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="My Activity"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        tools:ignore="MissingConstraints" />
+
     <TextView
+        android:id="@+id/text_login_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello Android!"
+        android:text="0"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_login_toast"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="140sp"
+        android:layout_marginEnd="20sp"
+        android:background="@drawable/rectangle"
+        android:text="TOAST"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/button_login_count"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintTop_toBottomOf="@id/text_login_number"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_login_count"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="140sp"
+        android:text="COUNT"
+        android:textSize="15sp"
+        android:background="@drawable/rectangle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintTop_toBottomOf="@id/text_login_number"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_login_random"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="140sp"
+        android:layout_marginStart="20sp"
+        android:text="RANDOM"
+        android:textSize="15sp"
+        android:background="@drawable/rectangle"
+        app:layout_constraintStart_toEndOf="@+id/button_login_count"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintTop_toBottomOf="@id/text_login_number"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
