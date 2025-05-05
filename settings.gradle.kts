@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "BCSD_Android_2025-1"
+rootProject.name = "Application05"
 include(":app")
  

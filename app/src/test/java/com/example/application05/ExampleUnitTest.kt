@@ -1,4 +1,4 @@
-package com.example.bcsd_android_2025_1
+package com.example.application05
 
 import org.junit.Test
 
