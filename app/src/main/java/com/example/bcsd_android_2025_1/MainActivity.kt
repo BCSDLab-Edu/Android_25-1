@@ -5,8 +5,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import java.util.Random
-
+import androidx.activity.result.contract.ActivityResultContracts
 class MainActivity : AppCompatActivity() {
 
     private var count = 0
@@ -27,17 +26,21 @@ class MainActivity : AppCompatActivity() {
             countText.text = count.toString()
         }
 
-        findViewById<Button>(R.id.button_random).setOnClickListener {
-            val random = Random()
-            val random_num = random.nextInt(count+1)
-
-            val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtra("CURRENT_COUNT", random_num.toString())
-            startActivity(intent)
-            count = random_num
-            countText.text = random_num.toString()
+        val startActivityWithResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == RESULT_OK) {
+                val data = result.data
+                if (data != null && data.hasExtra("random_value")) {
+                    val randomValue = data.getIntExtra("random_value", 0)
+                    count = randomValue
+                    countText.text = count.toString()
+                }
+            }
         }
 
-
+        findViewById<Button>(R.id.button_random).setOnClickListener {
+            val intent = Intent(this@MainActivity, SecondActivity::class.java)
+            intent.putExtra("count_value", count)
+            startActivityWithResult.launch(intent)
+        }
     }
 }

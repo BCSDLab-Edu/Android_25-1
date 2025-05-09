@@ -1,28 +1,24 @@
 package com.example.bcsd_android_2025_1
-
+import android.widget.Button
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import android.widget.TextView
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 
 class SecondActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_second)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
-        val text_view: TextView = findViewById(R.id.text_view)
+        val count = intent.getIntExtra("count_value", 0).coerceAtLeast(0)
+        val randomValue = (0..count).random()
 
-        if(intent.hasExtra("CURRENT_COUNT")) {
-            text_view.text = intent.getStringExtra("CURRENT_COUNT")
-        }
+        val textView = findViewById<TextView>(R.id.text_view)
+        textView?.text = "$randomValue"
 
+        val resultIntent = Intent()
+        resultIntent.putExtra("random_value", randomValue)
+        setResult(RESULT_OK, resultIntent)
     }
 }
