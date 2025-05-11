@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="text_toast">TOAST</string>
+    <string name="text_count">COUNT</string>
+    <string name="text_random">RANDOM</string>
+    <string name="text_toast_message">꼬기꼬기물꼬기는어디어디어디에?</string>
+    <string name="text_information">Here is a random number between 0 and %d</string>
+    <string name="text_dialog_title">우진이 반갑고!</string>
+    <string name="text_dialog_message">Count 초기화 하실?</string>
+    <string name="text_positive">웅</string>
+    <string name="text_negative">아니!</string>
+    <string name="text_neutral">잉?</string>
+
 </resources>
