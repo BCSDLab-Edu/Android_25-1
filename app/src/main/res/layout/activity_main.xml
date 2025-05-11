@@ -5,15 +5,71 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#4597E4"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textview_numberview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello Android!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="100sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="200dp"/>
+
+    <Button
+        android:id="@+id/button_toast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TOAST"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/textview_numberview"
+        app:layout_constraintEnd_toStartOf="@id/button_count"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="10dp"/>
+
+    <Button
+        android:id="@+id/button_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COUNT"
+        android:textColor="@color/black"
+        android:background="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/textview_numberview"
+        app:layout_constraintStart_toEndOf="@id/button_toast"
+        app:layout_constraintEnd_toStartOf="@id/button_random"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="10dp"/>
+
+    <Button
+        android:id="@+id/button_random"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RANDOM"
+        android:background="@color/white"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/textview_numberview"
+        app:layout_constraintStart_toEndOf="@id/button_count"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="150dp"/>
+
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
