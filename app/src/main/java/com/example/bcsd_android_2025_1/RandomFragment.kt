@@ -13,10 +13,11 @@ import androidx.core.os.bundleOf
 class RandomFragment : Fragment() {
     private lateinit var callback: OnBackPressedCallback
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-        }
+    companion object Constant {
+        const val KEY_RANDOM_NUMBER: String = "keyRandomNumber"
+        const val KEY_COUNT_NUMBER: String = "countNumber"
+        const val REQUEST_KEY_RANDOM_NUMBER: String = "requestRandomNumber"
+        const val TAG_MAIN_FRAGMENT: String = "MAIN_FRAGMENT_TAG"
     }
 
     override fun onCreateView(
@@ -33,15 +34,18 @@ class RandomFragment : Fragment() {
         val textviewSecondInformation: TextView = view.findViewById<TextView>(R.id.textview_second_information)
 
         var randomNumber = 0
-        if(arguments?.containsKey("countNumber") == true){
-                val count = arguments?.getInt("countNumber")!!
+        arguments?.let{
+            if(it.containsKey(KEY_COUNT_NUMBER)){
+                val count = arguments?.getInt(KEY_COUNT_NUMBER)?:0
                 randomNumber = (0 until count+1).random()
-            textviewSecondNumber.text = randomNumber.toString()
-            textviewSecondInformation.text = getString(R.string.text_information, count)
+                textviewSecondNumber.text = randomNumber.toString()
+                textviewSecondInformation.text = getString(R.string.text_information, count)
+            }
         }
 
-        val bundleRandom = bundleOf("keyRandomNumber" to randomNumber)
-        parentFragmentManager.setFragmentResult("requestRandomNumber", bundleRandom)
+
+        val bundleRandom = bundleOf(KEY_RANDOM_NUMBER to randomNumber)
+        parentFragmentManager.setFragmentResult(REQUEST_KEY_RANDOM_NUMBER, bundleRandom)
 
     }
 
@@ -50,7 +54,7 @@ class RandomFragment : Fragment() {
 
         callback = object : OnBackPressedCallback(true) {
                     override fun handleOnBackPressed() {
-                        requireActivity().supportFragmentManager.findFragmentByTag("MAIN_FRAGMENT_TAG")?.childFragmentManager
+                        requireActivity().supportFragmentManager.findFragmentByTag(TAG_MAIN_FRAGMENT)?.childFragmentManager
                             ?.beginTransaction()
                             ?.remove(this@RandomFragment)
                             ?.commit()

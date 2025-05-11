@@ -4,6 +4,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+    companion object Constant {
+        const val TAG_MAIN_FRAGMENT: String = "MAIN_FRAGMENT_TAG"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -11,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val mainFragment = MainFragment().apply{
         }
         supportFragmentManager.beginTransaction()
-            .replace(R.id.layout_main_fragment, mainFragment, "MAIN_FRAGMENT_TAG")
+            .replace(R.id.layout_main_fragment, mainFragment, TAG_MAIN_FRAGMENT)
             .commit()
     }
 }

@@ -12,11 +12,10 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
 
 class MainFragment : Fragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-        }
+    companion object Constant {
+        const val KEY_RANDOM_NUMBER: String = "keyRandomNumber"
+        const val KEY_COUNT_NUMBER: String = "countNumber"
+        const val REQUEST_KEY_RANDOM_NUMBER: String = "requestRandomNumber"
     }
 
     override fun onCreateView(
@@ -31,19 +30,19 @@ class MainFragment : Fragment() {
 
         val buttonRandom: Button = view.findViewById(R.id.button_random)
         val buttonCount: Button = view.findViewById(R.id.button_count)
-        val buttonToast: Button = view.findViewById(R.id.button_toast)
+        val buttonDialog: Button = view.findViewById(R.id.button_dialog)
 
         val textviewNumber: TextView = view.findViewById(R.id.textview_number)
         val toastMessage = getString(R.string.text_toast_message)
 
         var count = 0
 
-        childFragmentManager.setFragmentResultListener("requestRandomNumber", viewLifecycleOwner){key, bundle ->
-            count = bundle.getInt("keyRandomNumber", 0)
+        childFragmentManager.setFragmentResultListener(REQUEST_KEY_RANDOM_NUMBER, viewLifecycleOwner){key, bundle ->
+            count = bundle.getInt(KEY_RANDOM_NUMBER, 0)
             textviewNumber.text = count.toString()
         }
 
-        buttonToast.setOnClickListener {
+        buttonDialog.setOnClickListener {
             AlertDialog.Builder(requireActivity())
                 .setTitle(getString(R.string.text_dialog_title))
                 .setMessage(getString(R.string.text_dialog_message))
@@ -66,7 +65,7 @@ class MainFragment : Fragment() {
 
         buttonRandom.setOnClickListener {
             val randomFragment = RandomFragment().apply{
-                arguments = bundleOf("countNumber" to count)
+                arguments = bundleOf(KEY_COUNT_NUMBER to count)
             }
             childFragmentManager.beginTransaction()
                 .replace(R.id.layout_random_fragment, randomFragment)
