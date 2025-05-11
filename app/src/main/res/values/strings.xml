@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="main_toolbar">My Activity</string>
+    <string name="main_number">0</string>
+    <string name="main_random">0</string>
+    <string name="main_toastButton">TOAST</string>
+    <string name="main_countButton">COUNT</string>
+    <string name="main_randomButton">RANDOM</string>
+    <string name="dialog_title">경고</string>
+    <string name="dialog_message">숫자를 초기화하시겠습니까?</string>
+    <string name="dialog_toastMassage">숫자를 초기화하지 않습니다.</string>
+    <string name="dialog_positive">yes</string>
+    <string name="dialog_negative">no</string>
+    <string name="dialog_neutral">exit</string>
 </resources>
