@@ -7,6 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 
@@ -24,6 +25,8 @@ class FirstActivity : AppCompatActivity() {
 
         val toastMessage = getString(R.string.toast_message)
 
+
+
         val startActivityWithResult = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { result: ActivityResult ->
@@ -35,8 +38,22 @@ class FirstActivity : AppCompatActivity() {
         }
 
         toastButton.setOnClickListener {
-            Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show()
+            AlertDialog.Builder(this)
+                .setTitle("프로미스나인")
+                .setMessage("선택ㄱㄱ")
+                .setPositiveButton("초기화ㄱ") { dialog, which ->
+                    count = 0
+                    numTextView.text = count.toString()
+                }
+                .setNeutralButton("메시지ㄱ") { dialog, which ->
+                    Toast.makeText(this,toastMessage, Toast.LENGTH_SHORT).show()
+                }
+                .setNegativeButton("종료ㄱ") { dialog, which ->
+                    dialog.dismiss()
+                }
+                .show()
         }
+
 
         countButton.setOnClickListener {
             count++
@@ -44,10 +61,14 @@ class FirstActivity : AppCompatActivity() {
         }
 
         randomButton.setOnClickListener {
-            val bundle = bundleOf("currentCount" to count)
-            val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtras(bundle)
-            startActivityWithResult.launch(intent)
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_zone,Fragment1())
+                .addToBackStack(null)
+                .commit()
+            //val bundle = bundleOf("currentCount" to count)
+            //val intent = Intent(this, Fragment1::class.java)
+            //intent.putExtras(bundle)
+            //startActivityWithResult.launch(intent)
         }
     }
 }
