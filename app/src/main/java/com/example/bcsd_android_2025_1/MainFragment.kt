@@ -1,59 +1,64 @@
 package com.example.bcsd_android_2025_1
-
+import android.app.AlertDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MainFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MainFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    var count = 0
+    private lateinit var countText: TextView
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MainFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MainFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        countText = view.findViewById(R.id.text_view)
+        view.findViewById<Button>(R.id.button_toast).setOnClickListener {
+            AlertDialog.Builder(context)
+                .setMessage("I am the message")
+                .setTitle("I am the title")
+                .setPositiveButton("positive") { dialog, _ ->
+                    count = 0
+                    countText.text = count.toString()
+                    dialog.dismiss()
                 }
+                .setNeutralButton("neutral") { dialog, _ ->
+                    Toast.makeText(requireContext(), "우진업!!!", Toast.LENGTH_SHORT).show()
+                    dialog.dismiss()
+                }
+                .setNegativeButton("negative") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                    .show()
+        }
+        view.findViewById<Button>(R.id.button_count).setOnClickListener {
+            count++
+            countText.text = count.toString()
+        }
+
+        parentFragmentManager.setFragmentResultListener("random_result", viewLifecycleOwner) //얘는 받는거?
+        { _, bundle ->
+            val randomValue = bundle.getInt("random_value",0)
+            count = randomValue
+            countText.text = count.toString()
+        }
+
+        view.findViewById<Button>(R.id.button_random).setOnClickListener { // 랜덤으로 보내기
+            val fragment = RandomFragment().apply(){
+                arguments = bundleOf("count_value" to count)
             }
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
     }
 }
