@@ -9,6 +9,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.activity.OnBackPressedCallback
+
 
 class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +18,20 @@ class SecondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second)
 
         val count = intent.getIntExtra("COUNT", 0)
-        val random = (0 .. 10).random()
+        val random = (0 .. count).random()
+
+        val textRandom = findViewById<TextView>(R.id.text_random)
+        textRandom.text = random.toString()
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                val intent = Intent()
+                intent.putExtra("COUNT", random)
+                setResult(RESULT_OK, intent)
+                finish()
+            }
+        })
+
         val randomButton = findViewById<Button>(R.id.button_random)
         randomButton.setOnClickListener {
             val intent = Intent()

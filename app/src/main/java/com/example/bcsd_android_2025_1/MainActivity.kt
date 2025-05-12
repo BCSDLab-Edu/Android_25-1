@@ -6,6 +6,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -14,6 +15,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, MainFragment())
+            .commit()
 
         var count = 0
         lateinit var countText: TextView
@@ -28,9 +32,25 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val toastButton: Button = findViewById(R.id.button_toast)
+        /*val toastButton: Button = findViewById(R.id.button_toast)
         toastButton.setOnClickListener {
-            Toast.makeText(this, "Boink", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.toast_message), Toast.LENGTH_SHORT).show()
+        }*/
+
+        val button_toast = findViewById<Button>(R.id.button_toast)
+
+        button_toast.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            builder.setPositiveButton("positive") { dialog, which ->
+                count = 0
+            }
+            builder.setNeutralButton("@neutral") { dialog, which ->
+                Toast.makeText(this, getString(R.string.toast_message), Toast.LENGTH_SHORT).show()
+            }
+            builder.setNegativeButton("negative") { dialog, which ->
+                this.finish()
+            }
+            builder.show()
         }
 
         val countButton: Button = findViewById(R.id.button_count)

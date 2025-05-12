@@ -8,6 +8,11 @@
 
     tools:context=".MainActivity">
 
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -36,7 +41,7 @@
         android:id="@+id/button_toast"
         android:layout_width="80dp"
         android:layout_height="35dp"
-        android:text="TOAST"
+        android:text="@string/toast"
         android:textSize="9dp"
         android:backgroundTint="@color/puple"
         app:layout_constraintTop_toBottomOf="@+id/textView"
