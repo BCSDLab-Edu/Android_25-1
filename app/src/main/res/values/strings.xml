@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="toast">TOAST</string>
+    <string name="positive_message">positive</string>
+    <string name="neutral_message">neutral</string>
+    <string name="negative_message">negative</string>
+    <string name="toast_message">Boink</string>
 </resources>

@@ -8,13 +8,8 @@
 
     tools:context=".MainActivity">
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/text_random"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
@@ -32,7 +27,7 @@
         android:text="COUNT"
         android:textSize="9dp"
         android:backgroundTint="@color/puple"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/text_random"
         android:layout_marginTop="200dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -44,7 +39,7 @@
         android:text="@string/toast"
         android:textSize="9dp"
         android:backgroundTint="@color/puple"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/text_random"
         android:layout_marginTop="200dp"
         android:layout_marginEnd="180dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +52,7 @@
         android:text="RANDOM"
         android:textSize="9dp"
         android:backgroundTint="@color/puple"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/text_random"
         android:layout_marginTop="200dp"
         android:layout_marginStart="180dp"
         app:layout_constraintStart_toStartOf="parent"
