@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import kotlin.random.Random
 
-class Fragment1 : Fragment() {
+class Fragment_Random : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -38,6 +38,6 @@ class Fragment1 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_test, container, false)
+        return inflater.inflate(R.layout.fragment_rand, container, false)
     }
 }

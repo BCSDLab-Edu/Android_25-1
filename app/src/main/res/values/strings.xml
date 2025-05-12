@@ -3,6 +3,13 @@
     <string name="text_toast">TOAST</string>
     <string name="text_count">COUNT</string>
     <string name="text_random">RANDOM</string>
-    <string name="toast_message">우하하</string>
+    <string name="toast_message">루하하</string>
+    <string name="dialog_title">프로미스나인</string>
+    <string name="dialog_message">선택하세요</string>
+    <string name="text_positive">초기화</string>
+    <string name="text_neutral">메시지</string>
+    <string name="text_negative">종료</string>
     <string name="text_information">Here is a random number between 0 and </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
