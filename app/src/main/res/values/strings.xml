@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="text_dialog_caution">주의!!</string>
+    <string name="text_test_1">BCSD</string>
+    <string name="text_test_2">Android</string>
+    <string name="text_test_3">공우진</string>
+    <string name="text_dialog_delete_message">삭제하시겠습니까?</string>
+    <string name="text_dialog_change_message">수정하시겠습니까?</string>
+    <string name="text_delete">삭제</string>
+    <string name="text_ok">확인</string>
+    <string name="text_cancel">취소</string>
+    <string name="edittext_change_hint">수정할 이름을 입력하세요</string>
 </resources>
