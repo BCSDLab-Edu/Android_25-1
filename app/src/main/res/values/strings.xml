@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="list_name">이름을 입력하세요</string>
+    <string name="recyclerView_title">이름 목록 삭제하기</string>
+    <string name="recyclerView_message">이름 목록을 삭제해보자</string>
+    <string name="recyclerView_delete">삭제</string>
+    <string name="recyclerView_cancel">취소</string>
+    <string name="recyclerView_okay">확인</string>
 </resources>
