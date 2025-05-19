@@ -1,69 +1,38 @@
 package com.example.bcsd_android_2025_1
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AlertDialog
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: NameAdapter
+    private val itemList = mutableListOf<ListItem>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, MainFragment())
-            .commit()
 
-        var count = 0
-        lateinit var countText: TextView
-        countText = findViewById(R.id.textView)
+        recyclerView = findViewById(R.id.recyclerView)
+        adapter = NameAdapter(itemList)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = adapter
 
-        val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == RESULT_OK) {
-                val data = result.data
-                val newNumber = data?.getIntExtra("COUNT", 0) ?: 0
-                count = newNumber
-                countText.text = count.toString()
+        val editText = findViewById<EditText>(R.id.edit_text)
+        val addButton = findViewById<Button>(R.id.button_add)
+
+        addButton.setOnClickListener {
+            val name = editText.text.toString()
+            if (name.isNotBlank()) {
+                itemList.add(ListItem(name))
+                adapter.notifyItemInserted(itemList.size - 1)
+                editText.text.clear()
             }
-        }
-
-        /*val toastButton: Button = findViewById(R.id.button_toast)
-        toastButton.setOnClickListener {
-            Toast.makeText(this, getString(R.string.toast_message), Toast.LENGTH_SHORT).show()
-        }*/
-
-        val button_toast = findViewById<Button>(R.id.button_toast)
-
-        button_toast.setOnClickListener {
-            val builder = AlertDialog.Builder(this)
-            builder.setPositiveButton("positive") { dialog, which ->
-                count = 0
-            }
-            builder.setNeutralButton("@neutral") { dialog, which ->
-                Toast.makeText(this, getString(R.string.toast_message), Toast.LENGTH_SHORT).show()
-            }
-            builder.setNegativeButton("negative") { dialog, which ->
-                this.finish()
-            }
-            builder.show()
-        }
-
-        val countButton: Button = findViewById(R.id.button_count)
-        countButton.setOnClickListener{
-            count++
-            countText.text = count.toString()
-        }
-
-        val randomButton: Button = findViewById(R.id.button_random)
-        randomButton.setOnClickListener{
-            val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtra("COUNT", count)
-            launcher.launch(intent)
         }
     }
+
+    data class ListItem(val name: String)
 }

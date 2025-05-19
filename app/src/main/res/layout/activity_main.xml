@@ -1,67 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".MainActivity">
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="30sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:hint="add"
+        android:inputType="text"
+        app:layout_constraintEnd_toStartOf="@id/button_add"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/yellow"
+        android:text="+"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="300dp"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-    <Button
-        android:id="@+id/button_count"
-        android:layout_width="80dp"
-        android:layout_height="35dp"
-        android:text="COUNT"
-        android:textSize="9dp"
-        android:backgroundTint="@color/puple"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:layout_marginTop="200dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <Button
-        android:id="@+id/button_toast"
-        android:layout_width="80dp"
-        android:layout_height="35dp"
-        android:text="@string/toast"
-        android:textSize="9dp"
-        android:backgroundTint="@color/puple"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="180dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <Button
-        android:id="@+id/button_random"
-        android:layout_width="80dp"
-        android:layout_height="35dp"
-        android:text="RANDOM"
-        android:textSize="9dp"
-        android:backgroundTint="@color/puple"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:layout_marginTop="200dp"
-        android:layout_marginStart="180dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
