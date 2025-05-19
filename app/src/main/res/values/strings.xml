@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="app_name">BCSD_Android_2025–1</string>
+
+    <string name="et_main_input">입력</string>
+    <string name="btn_recyclerview_item"> </string>
+
 </resources>
