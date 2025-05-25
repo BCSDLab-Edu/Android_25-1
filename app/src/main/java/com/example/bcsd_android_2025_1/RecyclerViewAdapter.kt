@@ -23,21 +23,19 @@ class RecyclerViewAdapter(private val items:ArrayList<ListData>): RecyclerView.A
 
     override fun getItemCount(): Int = items.size
 
-    inner class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
-        private var view: View = v
-        val context = view.context
+    inner class ViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         fun bind(item: ListData, position: Int) {
             val textViewItem: TextView = view.findViewById(R.id.textview_item)
             textViewItem.text = item.title
             view.setOnClickListener {
-                AlertDialog.Builder(context)
-                    .setTitle(context.getString(R.string.text_dialog_caution))
-                    .setMessage(context.getString(R.string.text_dialog_delete_message))
-                    .setPositiveButton(context.getString(R.string.text_delete)) { dialog, _ ->
+                AlertDialog.Builder(view.context)
+                    .setTitle(view.context.getString(R.string.text_dialog_caution))
+                    .setMessage(view.context.getString(R.string.text_dialog_delete_message))
+                    .setPositiveButton(view.context.getString(R.string.text_delete)) { dialog, _ ->
                         items.removeAt(position)
                         notifyItemRemoved(position)
                     }
-                    .setNegativeButton(context.getString(R.string.text_cancel)) { dialog, _ ->
+                    .setNegativeButton(view.context.getString(R.string.text_cancel)) { dialog, _ ->
                         dialog.dismiss()
                     }
                     .show()
@@ -45,17 +43,17 @@ class RecyclerViewAdapter(private val items:ArrayList<ListData>): RecyclerView.A
 
             view.setOnLongClickListener {
                 val editTextChange = EditText(view.context)
-                editTextChange.hint = context.getString(R.string.edittext_change_hint)
+                editTextChange.hint = view.context.getString(R.string.edittext_change_hint)
 
-                AlertDialog.Builder(context)
-                    .setTitle(context.getString(R.string.text_dialog_caution))
-                    .setMessage(context.getString(R.string.text_dialog_change_message))
+                AlertDialog.Builder(view.context)
+                    .setTitle(view.context.getString(R.string.text_dialog_caution))
+                    .setMessage(view.context.getString(R.string.text_dialog_change_message))
                     .setView(editTextChange)
-                    .setPositiveButton(context.getString(R.string.text_ok)) { dialog, _ ->
+                    .setPositiveButton(view.context.getString(R.string.text_ok)) { dialog, _ ->
                         item.title=editTextChange.text.toString()
                         notifyItemChanged(adapterPosition)
                     }
-                    .setNegativeButton(context.getString(R.string.text_cancel)) { dialog, _ ->
+                    .setNegativeButton(view.context.getString(R.string.text_cancel)) { dialog, _ ->
                         dialog.dismiss()
                     }
                     .show()

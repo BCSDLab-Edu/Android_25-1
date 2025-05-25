@@ -10,4 +10,5 @@
     <string name="text_ok">확인</string>
     <string name="text_cancel">취소</string>
     <string name="edittext_change_hint">수정할 이름을 입력하세요</string>
+    <string name="edittext_name_hint">이름을 입력하세요</string>
 </resources>

@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
         list.add(ListData(getString(R.string.text_test_3)))
 
         val recyclerView: RecyclerView = findViewById(R.id.recycler_view)
-        recyclerView.layoutManager = LinearLayoutManager(this)
 
         val adapter = RecyclerViewAdapter(list)
         recyclerView.adapter = adapter
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         floatButton.setOnClickListener {
             list.add(ListData(editTextGetName.text.toString()))
             editTextGetName.setText("")
-            adapter.notifyDataSetChanged() // 추가된 데이터 반영
+            adapter.notifyItemInserted(list.size-1) // 추가된 데이터 반영
         }
     }
 }

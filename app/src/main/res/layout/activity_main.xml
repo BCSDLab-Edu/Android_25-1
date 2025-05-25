@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/edittext_get_name"
-        android:hint="이름을 입력하세요"
+        android:hint="@string/edittext_name_hint"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
