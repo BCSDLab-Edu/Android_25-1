@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="toolbar_title">My Activity</string>
+    <string name="main_toastMassage">와우!!</string>
+    <string name="main_zero">0</string>
+    <string name="main_toastButton">TOAST</string>
+    <string name="main_countButton">COUNT</string>
+    <string name="main_randomButton">RANDOM</string>
+    <string name="key_number">number</string>
+    <string name="key_random">random</string>
+    <string name="notification_random">random Notification</string>
+    <string name="notification_random_text">text</string>
+    <string name="notification_textTitle">제 이모티콘이에요</string>
+    <string name="notification_textContent">너무 귀엽져!!</string>
+    <string name="notification_add">add</string>
+    <string name="notification_close">close</string>
+
 </resources>
