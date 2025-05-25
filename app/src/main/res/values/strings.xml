@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="number_text">0</string>
+    <string name="toast_text">TOAST</string>
+    <string name="count_text">COUNT</string>
+    <string name="random_text">RANDOM</string>
+    <string name="title_text">Here is a random number</string>
+    <string name="random_info_text">Here is a random number between 0 and %1$d</string>
+    <string name="toast_message">Toast 버튼 클릭</string>
+    <string name="notification_title">랜덤 버튼 클릭됨</string>
+    <string name="notification_content">SecondActivity로 이동하고 랜덤 숫자를 생성합니다.</string>
+    <string name="channel_name">랜덤 알림 채널</string>
+    <string name="channel_description">랜덤 버튼 클릭 시 알림을 표시합니다.</string>
+    <string name="action_more">더 보기</string>
+    <string name="action_close">닫기</string>
+
 </resources>
