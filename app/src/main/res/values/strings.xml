@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">bcsd practice</string>
     <string name="login_title">로그인</string>
     <string name="hint_id">아이디</string>
@@ -10,6 +10,15 @@
     <string name="second_fragment_label" translatable="false">Second Fragment</string>
     <string name="next" translatable="false">Next</string>
     <string name="previous" translatable="false">Previous</string>
+    <string name="more" translatable="false">more</string>
+    <string name="back" translatable="false" tools:ignore="ExtraTranslation">back</string>
+    <string name="text_title" translatable="false" tools:ignore="ExtraTranslation">Alarm</string>
+    <string name="textContent" translatable="false" tools:ignore="ExtraTranslation">choice</string>
+    <string name="notification_channel_random" translatable="false" tools:ignore="ExtraTranslation">random</string>
+    <string name="channel_text" translatable="false" tools:ignore="ExtraTranslation">text</string>
+    <string name="result" translatable="false">Result: %1$d</string>
+
+
 
     <string name="lorem_ipsum" translatable="false">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris

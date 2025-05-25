@@ -1,35 +1,30 @@
 package com.example.bcsd_android_2025_1
 
-import android.annotation.SuppressLint
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlin.random.Random
 
+
 class SecondActivity : AppCompatActivity() {
 
-    private var Count = 0
-
-    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
+        setContentView(R.layout.activity_two)
+        val max = intent.getIntExtra(MainActivity.EXTRA_COUNT, 0)
 
-        val textViewRandom = findViewById<TextView>(R.id.view_random)
-        val Select = findViewById<Button>(R.id.button_select)
+        val random = if (max > 0) Random.nextInt(0, max + 1) else 0
 
-        Count = intent.getIntExtra(MainActivity.EXTRA_COUNT, 0)
+        val result = findViewById<TextView>(R.id.view_random)
+        result.text = getString(R.string.result, random)
 
-        val randomValue = Random.nextInt(0, Count + 1)
-        textViewRandom.text = "Random: $randomValue"
+        getSharedPreferences("prefer", MODE_PRIVATE)
+            .edit()
+            .putInt("new_random", random)
+            .apply()
 
-        Select.setOnClickListener {
-            val resultIntent = Intent()
-            resultIntent.putExtra(MainActivity.EXTRA_RANDOM, randomValue)
-            setResult(Activity.RESULT_OK, resultIntent)
+        findViewById<Button>(R.id.button_select).setOnClickListener {
             finish()
         }
     }
