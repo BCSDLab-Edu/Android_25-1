@@ -5,37 +5,32 @@ import androidx.appcompat.widget.Toolbar
 import android.widget.TextView
 import kotlin.random.Random
 import android.content.Intent
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.core.app.NotificationManagerCompat
 
 class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_second)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar_login_second)
         setSupportActionBar(toolbar)
 
-        val number = intent.getIntExtra("number", 0)
-        val random = if (number > 0) Random.nextInt(0, number + 1) else 0
+        NotificationManagerCompat.from(this).cancel(0)
+
+        val number = intent.getIntExtra(getString(R.string.key_number), 0)
+
+        val random = Random.nextInt(0, number + 1)
 
         val textView = findViewById<TextView>(R.id.text_random_number)
-        textView.text = "$random"
+        textView.text = random.toString()
 
         textView.setOnClickListener {
-            val Intent = Intent()
-            Intent.putExtra("random", random)
-            setResult(RESULT_OK, Intent)
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra(getString(R.string.key_random), random)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+            startActivity(intent)
             finish()
         }
-
     }
 }
