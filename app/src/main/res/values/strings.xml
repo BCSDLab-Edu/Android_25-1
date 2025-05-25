@@ -3,6 +3,12 @@
     <string name="text_toast">TOAST</string>
     <string name="text_count">COUNT</string>
     <string name="text_random">RANDOM</string>
-    <string name="toast_message">꼬기꼬기물꼬기는어디어디어디에?</string>
+    <string name="toast_message">트랄라렐로 트랄랄라~!</string>
     <string name="text_information">Here is a random number between 0 and </string>
+    <string name="text_notification_text">트랄라렐로~트랄랄라~~~!!!</string>
+    <string name="text_notification_title">트랄라...</string>
+    <string name="text_close">닫기</string>
+    <string name="text_more">더보기</string>
+    <string name="text_notification_channel_name">Tralalero</string>
+    <string name="text_notification_channel_text">Tralala</string>
 </resources>

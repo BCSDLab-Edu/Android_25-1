@@ -7,9 +7,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.widget.TextView
 import android.content.Intent
+import androidx.activity.addCallback
 import androidx.core.os.bundleOf
 
 class SecondActivity : AppCompatActivity() {
+    var randomNumber = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -23,25 +25,22 @@ class SecondActivity : AppCompatActivity() {
         val textviewSecondNumber: TextView = findViewById(R.id.textview_second_number)
         val textviewSecondInformation: TextView = findViewById(R.id.textview_second_information)
 
-
         val information = getString(R.string.text_information)
-        var randomNumber = 0
 
-
-        if (intent.hasExtra("countNumber")) {
-            val count = intent.extras?.getInt("countNumber")!!
+        if (intent.hasExtra(MainActivity.KEY_COUNT_NUMBER)) {
+            val count = intent.getIntExtra(MainActivity.KEY_COUNT_NUMBER, 0)
             randomNumber = (0 until count+1).random()
             textviewSecondNumber.text = randomNumber.toString()
             textviewSecondInformation.text = information.plus(" $count")
         }
 
-
-        val bundleSecond = bundleOf("keyRandomNumber" to randomNumber)
-        val intentSecond = Intent(this, MainActivity::class.java).apply{
-            putExtras(bundleSecond)
+        onBackPressedDispatcher.addCallback(this) {
+            val intent = Intent(this@SecondActivity, MainActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+                putExtra(MainActivity.KEY_RANDOM_NUMBER, randomNumber)
+            }
+            startActivity(intent)
+            finish()
         }
-        setResult(RESULT_OK, intentSecond)
     }
-
-
 }
