@@ -1,0 +1,700 @@
+Index: app/src/main/res/layout/week4_linear.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!--<?xml version=\"1.0\" encoding=\"utf-8\"?>-->\r\n<!--<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"-->\r\n<!--    xmlns:app=\"http://schemas.android.com/apk/res-auto\"-->\r\n<!--    xmlns:tools=\"http://schemas.android.com/tools\"-->\r\n<!--    android:layout_width=\"match_parent\"-->\r\n<!--    android:layout_height=\"match_parent\"-->\r\n<!--    android:orientation=\"vertical\">-->\r\n\r\n<!--    <TextView-->\r\n<!--        android:id=\"@+id/tv_sign_in_title\"-->\r\n<!--        android:layout_width=\"wrap_content\"-->\r\n<!--        android:layout_height=\"wrap_content\"-->\r\n<!--        android:layout_gravity=\"center\"-->\r\n<!--        android:layout_marginTop=\"150dp\"-->\r\n<!--        android:text=\"@string/sign_in\"-->\r\n<!--        android:textSize=\"30sp\"-->\r\n<!--        android:textStyle=\"bold\" />-->\r\n\r\n<!--    <EditText-->\r\n<!--        android:id=\"@+id/et_sign_in_email\"-->\r\n<!--        android:layout_width=\"388dp\"-->\r\n<!--        android:layout_height=\"48dp\"-->\r\n<!--        android:layout_gravity=\"center\"-->\r\n<!--        android:ems=\"10\"-->\r\n<!--        android:importantForAutofill=\"no\"-->\r\n<!--        android:inputType=\"textEmailAddress\"-->\r\n<!--        android:minHeight=\"48dp\"-->\r\n<!--        android:text=\"@string/user_id\"-->\r\n<!--        tools:ignore=\"LabelFor\"-->\r\n<!--        android:layout_marginTop=\"15dp\"/>-->\r\n\r\n<!--    <EditText-->\r\n<!--        android:id=\"@+id/et_sign_in_password\"-->\r\n<!--        android:layout_width=\"388dp\"-->\r\n<!--        android:maxWidth=\"488dp\"-->\r\n<!--        android:layout_height=\"48dp\"-->\r\n<!--        android:layout_gravity=\"center\"-->\r\n<!--        android:ems=\"10\"-->\r\n<!--        android:hint=\"@string/user_password\"-->\r\n<!--        android:importantForAutofill=\"no\"-->\r\n<!--        android:inputType=\"textPassword\"-->\r\n<!--        android:minHeight=\"48dp\"-->\r\n<!--        android:layout_marginTop=\"10dp\"/>-->\r\n<!--    <Button-->\r\n<!--        android:id=\"@+id/btn_sign_in_login\"-->\r\n<!--        android:layout_width=\"wrap_content\"-->\r\n<!--        android:layout_height=\"wrap_content\"-->\r\n<!--        android:layout_gravity=\"center\"-->\r\n<!--        android:text=\"@string/btn_sign_in\"-->\r\n<!--        android:contentDescription=\"@string/btn_sign_in_button\"-->\r\n<!--        android:layout_marginTop=\"15dp\"/>-->\r\n\r\n<!--    <LinearLayout-->\r\n<!--        android:layout_width=\"match_parent\"-->\r\n<!--        android:layout_height=\"wrap_content\"-->\r\n<!--        android:orientation=\"horizontal\"-->\r\n<!--        android:gravity=\"center\"-->\r\n<!--        android:layout_marginTop=\"15dp\">-->\r\n\r\n<!--        <ImageView-->\r\n<!--            android:id=\"@+id/iv_google_logo\"-->\r\n<!--            android:layout_width=\"45dp\"-->\r\n<!--            android:layout_height=\"45dp\"-->\r\n<!--            android:contentDescription=\"@string/google_logo\"-->\r\n<!--            app:srcCompat=\"@drawable/ic_logo_google\"-->\r\n<!--            android:layout_marginEnd=\"5dp\"/>-->\r\n\r\n<!--        <ImageView-->\r\n<!--            android:id=\"@+id/iv_naver_logo\"-->\r\n<!--            android:layout_width=\"45dp\"-->\r\n<!--            android:layout_height=\"45dp\"-->\r\n<!--            android:contentDescription=\"@string/naver_logo\"-->\r\n<!--            app:srcCompat=\"@drawable/ic_logo_naver\"-->\r\n<!--            tools:ignore=\"ImageContrastCheck\"-->\r\n<!--            android:layout_gravity=\"center\"/>-->\r\n\r\n<!--        <ImageView-->\r\n<!--            android:id=\"@+id/iv_kakao_logo\"-->\r\n<!--            android:layout_width=\"45dp\"-->\r\n<!--            android:layout_height=\"45dp\"-->\r\n<!--            android:contentDescription=\"@string/kakao_logo\"-->\r\n<!--            app:srcCompat=\"@drawable/ic_logo_kakao\"-->\r\n<!--            android:layout_marginStart=\"5dp\"/>-->\r\n\r\n<!--        </LinearLayout>-->\r\n\r\n<!--    <LinearLayout-->\r\n<!--        android:layout_width=\"match_parent\"-->\r\n<!--        android:layout_height=\"wrap_content\"-->\r\n<!--        android:orientation=\"horizontal\"-->\r\n<!--        android:gravity=\"center\"-->\r\n<!--        android:layout_marginTop=\"15dp\">-->\r\n\r\n<!--        <TextView-->\r\n<!--            android:id=\"@+id/tv_sign_in_find\"-->\r\n<!--            android:layout_width=\"wrap_content\"-->\r\n<!--            android:layout_height=\"wrap_content\"-->\r\n<!--            android:text=\"@string/forgot_password\" />-->\r\n<!--        <TextView-->\r\n<!--            android:id=\"@+id/tv_sign_in_sign_up\"-->\r\n<!--            android:layout_width=\"wrap_content\"-->\r\n<!--            android:layout_height=\"wrap_content\"-->\r\n<!--            android:text=\"@string/signup\"-->\r\n<!--            android:layout_marginStart=\"5dp\"/>-->\r\n\r\n\r\n\r\n<!--        </LinearLayout>-->\r\n\r\n\r\n\r\n<!--</LinearLayout>-->
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/week4_linear.xml b/app/src/main/res/layout/week4_linear.xml
+--- a/app/src/main/res/layout/week4_linear.xml	(revision e154905a1e28ea61a18be597e636da6b456b36f8)
++++ b/app/src/main/res/layout/week4_linear.xml	(date 1748229113140)
+@@ -1,112 +1,112 @@
+-<!--<?xml version="1.0" encoding="utf-8"?>-->
+-<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+-<!--    xmlns:tools="http://schemas.android.com/tools"-->
+-<!--    android:layout_width="match_parent"-->
+-<!--    android:layout_height="match_parent"-->
+-<!--    android:orientation="vertical">-->
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    android:orientation="vertical">
+ 
+-<!--    <TextView-->
+-<!--        android:id="@+id/tv_sign_in_title"-->
+-<!--        android:layout_width="wrap_content"-->
+-<!--        android:layout_height="wrap_content"-->
+-<!--        android:layout_gravity="center"-->
+-<!--        android:layout_marginTop="150dp"-->
+-<!--        android:text="@string/sign_in"-->
+-<!--        android:textSize="30sp"-->
+-<!--        android:textStyle="bold" />-->
++    <TextView
++        android:id="@+id/tv_sign_in_title"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_gravity="center"
++        android:layout_marginTop="150dp"
++        android:text="@string/sign_in"
++        android:textSize="30sp"
++        android:textStyle="bold" />
+ 
+-<!--    <EditText-->
+-<!--        android:id="@+id/et_sign_in_email"-->
+-<!--        android:layout_width="388dp"-->
+-<!--        android:layout_height="48dp"-->
+-<!--        android:layout_gravity="center"-->
+-<!--        android:ems="10"-->
+-<!--        android:importantForAutofill="no"-->
+-<!--        android:inputType="textEmailAddress"-->
+-<!--        android:minHeight="48dp"-->
+-<!--        android:text="@string/user_id"-->
+-<!--        tools:ignore="LabelFor"-->
+-<!--        android:layout_marginTop="15dp"/>-->
++    <EditText
++        android:id="@+id/et_sign_in_email"
++        android:layout_width="388dp"
++        android:layout_height="48dp"
++        android:layout_gravity="center"
++        android:ems="10"
++        android:importantForAutofill="no"
++        android:inputType="textEmailAddress"
++        android:minHeight="48dp"
++        android:text="@string/user_id"
++        tools:ignore="LabelFor"
++        android:layout_marginTop="15dp"/>
+ 
+-<!--    <EditText-->
+-<!--        android:id="@+id/et_sign_in_password"-->
+-<!--        android:layout_width="388dp"-->
+-<!--        android:maxWidth="488dp"-->
+-<!--        android:layout_height="48dp"-->
+-<!--        android:layout_gravity="center"-->
+-<!--        android:ems="10"-->
+-<!--        android:hint="@string/user_password"-->
+-<!--        android:importantForAutofill="no"-->
+-<!--        android:inputType="textPassword"-->
+-<!--        android:minHeight="48dp"-->
+-<!--        android:layout_marginTop="10dp"/>-->
+-<!--    <Button-->
+-<!--        android:id="@+id/btn_sign_in_login"-->
+-<!--        android:layout_width="wrap_content"-->
+-<!--        android:layout_height="wrap_content"-->
+-<!--        android:layout_gravity="center"-->
+-<!--        android:text="@string/btn_sign_in"-->
+-<!--        android:contentDescription="@string/btn_sign_in_button"-->
+-<!--        android:layout_marginTop="15dp"/>-->
++    <EditText
++        android:id="@+id/et_sign_in_password"
++        android:layout_width="388dp"
++        android:maxWidth="488dp"
++        android:layout_height="48dp"
++        android:layout_gravity="center"
++        android:ems="10"
++        android:hint="@string/user_password"
++        android:importantForAutofill="no"
++        android:inputType="textPassword"
++        android:minHeight="48dp"
++        android:layout_marginTop="10dp"/>
++    <Button
++        android:id="@+id/btn_sign_in_login"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_gravity="center"
++        android:text="@string/btn_sign_in"
++        android:contentDescription="@string/btn_sign_in_button"
++        android:layout_marginTop="15dp"/>
+ 
+-<!--    <LinearLayout-->
+-<!--        android:layout_width="match_parent"-->
+-<!--        android:layout_height="wrap_content"-->
+-<!--        android:orientation="horizontal"-->
+-<!--        android:gravity="center"-->
+-<!--        android:layout_marginTop="15dp">-->
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:orientation="horizontal"
++        android:gravity="center"
++        android:layout_marginTop="15dp">
+ 
+-<!--        <ImageView-->
+-<!--            android:id="@+id/iv_google_logo"-->
+-<!--            android:layout_width="45dp"-->
+-<!--            android:layout_height="45dp"-->
+-<!--            android:contentDescription="@string/google_logo"-->
+-<!--            app:srcCompat="@drawable/ic_logo_google"-->
+-<!--            android:layout_marginEnd="5dp"/>-->
++        <ImageView
++            android:id="@+id/iv_google_logo"
++            android:layout_width="45dp"
++            android:layout_height="45dp"
++            android:contentDescription="@string/google_logo"
++            app:srcCompat="@drawable/ic_logo_google"
++            android:layout_marginEnd="5dp"/>
+ 
+-<!--        <ImageView-->
+-<!--            android:id="@+id/iv_naver_logo"-->
+-<!--            android:layout_width="45dp"-->
+-<!--            android:layout_height="45dp"-->
+-<!--            android:contentDescription="@string/naver_logo"-->
+-<!--            app:srcCompat="@drawable/ic_logo_naver"-->
+-<!--            tools:ignore="ImageContrastCheck"-->
+-<!--            android:layout_gravity="center"/>-->
++        <ImageView
++            android:id="@+id/iv_naver_logo"
++            android:layout_width="45dp"
++            android:layout_height="45dp"
++            android:contentDescription="@string/naver_logo"
++            app:srcCompat="@drawable/ic_logo_naver"
++            tools:ignore="ImageContrastCheck"
++            android:layout_gravity="center"/>
+ 
+-<!--        <ImageView-->
+-<!--            android:id="@+id/iv_kakao_logo"-->
+-<!--            android:layout_width="45dp"-->
+-<!--            android:layout_height="45dp"-->
+-<!--            android:contentDescription="@string/kakao_logo"-->
+-<!--            app:srcCompat="@drawable/ic_logo_kakao"-->
+-<!--            android:layout_marginStart="5dp"/>-->
++        <ImageView
++            android:id="@+id/iv_kakao_logo"
++            android:layout_width="45dp"
++            android:layout_height="45dp"
++            android:contentDescription="@string/kakao_logo"
++            app:srcCompat="@drawable/ic_logo_kakao"
++            android:layout_marginStart="5dp"/>
+ 
+-<!--        </LinearLayout>-->
++        </LinearLayout>
+ 
+-<!--    <LinearLayout-->
+-<!--        android:layout_width="match_parent"-->
+-<!--        android:layout_height="wrap_content"-->
+-<!--        android:orientation="horizontal"-->
+-<!--        android:gravity="center"-->
+-<!--        android:layout_marginTop="15dp">-->
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:orientation="horizontal"
++        android:gravity="center"
++        android:layout_marginTop="15dp">
+ 
+-<!--        <TextView-->
+-<!--            android:id="@+id/tv_sign_in_find"-->
+-<!--            android:layout_width="wrap_content"-->
+-<!--            android:layout_height="wrap_content"-->
+-<!--            android:text="@string/forgot_password" />-->
+-<!--        <TextView-->
+-<!--            android:id="@+id/tv_sign_in_sign_up"-->
+-<!--            android:layout_width="wrap_content"-->
+-<!--            android:layout_height="wrap_content"-->
+-<!--            android:text="@string/signup"-->
+-<!--            android:layout_marginStart="5dp"/>-->
++        <TextView
++            android:id="@+id/tv_sign_in_find"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:text="@string/forgot_password" />
++        <TextView
++            android:id="@+id/tv_sign_in_sign_up"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:text="@string/signup"
++            android:layout_marginStart="5dp"/>
+ 
+ 
+ 
+-<!--        </LinearLayout>-->
++        </LinearLayout>
+ 
+ 
+ 
+-<!--</LinearLayout>-->
+\ No newline at end of file
++</LinearLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout-land/week3assignment.xml
+===================================================================
+diff --git a/app/src/main/res/layout-land/week3assignment.xml b/app/src/main/res/layout-land/week3assignment.xml
+deleted file mode 100644
+--- a/app/src/main/res/layout-land/week3assignment.xml	(revision e154905a1e28ea61a18be597e636da6b456b36f8)
++++ /dev/null	(revision e154905a1e28ea61a18be597e636da6b456b36f8)
+@@ -1,117 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent">
+-
+-    <TextView
+-        android:id="@+id/tv_sign_in_title"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:layout_marginStart="164dp"
+-        android:layout_marginTop="10dp"
+-        android:layout_marginEnd="164dp"
+-        android:contentDescription="@string/sign_in_title"
+-        android:text="@string/sign_in"
+-        android:textSize="30sp"
+-        android:textStyle="bold"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
+-
+-    <EditText
+-        android:id="@+id/et_sign_in_email"
+-        android:layout_width="331dp"
+-        android:layout_height="48dp"
+-        android:layout_marginStart="40dp"
+-        android:layout_marginEnd="40dp"
+-        android:ems="10"
+-        android:importantForAutofill="no"
+-        android:inputType="textEmailAddress"
+-        android:text="@string/user_id"
+-        android:textColor="@color/black"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        tools:ignore="LabelFor,MissingConstraints"
+-        tools:layout_editor_absoluteY="83dp" />
+-
+-    <EditText
+-        android:id="@+id/et_sign_in_password"
+-        android:layout_width="331dp"
+-        android:layout_height="48dp"
+-        android:layout_marginStart="40dp"
+-        android:layout_marginTop="11dp"
+-        android:layout_marginEnd="40dp"
+-        android:ems="10"
+-        android:hint="@string/user_password"
+-        android:inputType="textPassword"
+-        android:textColorHint="@color/black"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/et_sign_in_email"
+-        tools:ignore="Autofill" />
+-
+-    <Button
+-        android:id="@+id/btn_sign_in_login"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:contentDescription="@string/btn_sign_in_button"
+-        android:text="@string/btn_sign_in"
+-        tools:layout_editor_absoluteX="401dp"
+-        tools:layout_editor_absoluteY="222dp"
+-        tools:ignore="MissingConstraints" />
+-
+-    <ImageView
+-        android:id="@+id/iv_google_logo"
+-        android:layout_width="45dp"
+-        android:layout_height="45dp"
+-        android:contentDescription="@string/google_logo"
+-        android:importantForAutofill="no"
+-        app:srcCompat="@drawable/ic_logo_google"
+-        tools:layout_editor_absoluteX="372dp"
+-        tools:layout_editor_absoluteY="290dp"
+-        tools:ignore="MissingConstraints" />
+-
+-    <ImageView
+-        android:id="@+id/iv_naver_logo"
+-        android:layout_width="45dp"
+-        android:layout_height="45dp"
+-        android:contentDescription="@string/naver_logo"
+-        android:importantForAutofill="no"
+-        app:srcCompat="@drawable/ic_logo_naver"
+-        tools:ignore="ImageContrastCheck,MissingConstraints"
+-        tools:layout_editor_absoluteX="421dp"
+-        tools:layout_editor_absoluteY="290dp" />
+-
+-    <ImageView
+-        android:id="@+id/iv_kakao_logo"
+-        android:layout_width="45dp"
+-        android:layout_height="45dp"
+-        android:contentDescription="@string/kakao_logo"
+-        app:srcCompat="@drawable/ic_logo_kakao"
+-        tools:layout_editor_absoluteX="473dp"
+-        tools:layout_editor_absoluteY="290dp"
+-        tools:ignore="MissingConstraints" />
+-
+-    <TextView
+-        android:id="@+id/tv_sign_in_find"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:text="@string/forgot_password"
+-        tools:layout_editor_absoluteX="372dp"
+-        tools:layout_editor_absoluteY="354dp"
+-        tools:ignore="MissingConstraints" />
+-
+-    <TextView
+-        android:id="@+id/tv_sign_in_sign_up"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:autofillHints=""
+-        android:importantForAutofill="no"
+-        android:text="@string/signup"
+-        tools:layout_editor_absoluteX="466dp"
+-        tools:layout_editor_absoluteY="354dp"
+-        tools:ignore="MissingConstraints" />
+-
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/week3assignment.xml
+===================================================================
+diff --git a/app/src/main/res/layout/week3assignment.xml b/app/src/main/res/layout/week3assignment.xml
+deleted file mode 100644
+--- a/app/src/main/res/layout/week3assignment.xml	(revision e154905a1e28ea61a18be597e636da6b456b36f8)
++++ /dev/null	(revision e154905a1e28ea61a18be597e636da6b456b36f8)
+@@ -1,129 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto"
+-    xmlns:tools="http://schemas.android.com/tools"
+-    android:layout_width="match_parent"
+-    android:layout_height="match_parent">
+-
+-    <TextView
+-        android:id="@+id/tv_sign_in_title"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:layout_marginStart="164dp"
+-        android:layout_marginTop="106dp"
+-        android:layout_marginEnd="164dp"
+-        android:layout_marginBottom="54dp"
+-        android:text="@string/sign_in"
+-        android:textSize="30sp"
+-        android:textStyle="bold"
+-        android:contentDescription="@string/sign_in_title"
+-        app:layout_constraintBottom_toTopOf="@+id/et_sign_in_email"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toTopOf="parent" />
+-
+-    <EditText
+-        android:id="@+id/et_sign_in_email"
+-        android:layout_width="331dp"
+-        android:layout_height="48dp"
+-        android:layout_marginStart="40dp"
+-        android:layout_marginTop="54dp"
+-        android:layout_marginEnd="40dp"
+-        android:ems="10"
+-        android:importantForAutofill="no"
+-        android:inputType="textEmailAddress"
+-        android:text="@string/user_id"
+-        android:textColor="@color/black"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/tv_sign_in_title"
+-        tools:ignore="LabelFor" />
+-
+-    <EditText
+-        android:id="@+id/et_sign_in_password"
+-        android:layout_width="331dp"
+-        android:layout_height="48dp"
+-        android:layout_marginStart="40dp"
+-        android:layout_marginTop="11dp"
+-        android:layout_marginEnd="40dp"
+-        android:ems="10"
+-        android:hint="@string/user_password"
+-        android:inputType="textPassword"
+-        android:textColorHint="@color/black"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:layout_constraintTop_toBottomOf="@+id/et_sign_in_email"
+-        tools:ignore="Autofill" />
+-
+-    <Button
+-        android:id="@+id/btn_sign_in_login"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:layout_marginStart="162dp"
+-        android:layout_marginBottom="17dp"
+-        android:contentDescription="@string/btn_sign_in_button"
+-        android:text="@string/btn_sign_in"
+-        app:layout_constraintBottom_toTopOf="@+id/iv_naver_logo"
+-        app:layout_constraintStart_toStartOf="parent" />
+-
+-    <ImageView
+-        android:id="@+id/iv_google_logo"
+-        android:layout_width="45dp"
+-        android:layout_height="45dp"
+-        android:layout_marginStart="130dp"
+-        android:layout_marginEnd="8dp"
+-        android:layout_marginBottom="10dp"
+-        android:contentDescription="@string/google_logo"
+-        android:importantForAutofill="no"
+-        app:layout_constraintBottom_toTopOf="@+id/tv_sign_in_find"
+-        app:layout_constraintEnd_toStartOf="@+id/iv_naver_logo"
+-        app:layout_constraintStart_toStartOf="parent"
+-        app:srcCompat="@drawable/ic_logo_google" />
+-
+-    <ImageView
+-        android:id="@+id/iv_naver_logo"
+-        android:layout_width="45dp"
+-        android:layout_height="45dp"
+-        android:layout_marginStart="8dp"
+-        android:layout_marginBottom="10dp"
+-        android:contentDescription="@string/naver_logo"
+-        android:importantForAutofill="no"
+-        app:layout_constraintBottom_toTopOf="@+id/tv_sign_in_find"
+-        app:layout_constraintStart_toEndOf="@+id/iv_google_logo"
+-        app:srcCompat="@drawable/ic_logo_naver"
+-        tools:ignore="ImageContrastCheck" />
+-
+-    <ImageView
+-        android:id="@+id/iv_kakao_logo"
+-        android:layout_width="45dp"
+-        android:layout_height="45dp"
+-        android:layout_marginStart="8dp"
+-        android:layout_marginBottom="10dp"
+-        android:contentDescription="@string/kakao_logo"
+-        app:layout_constraintBottom_toTopOf="@+id/tv_sign_in_sign_up"
+-        app:layout_constraintStart_toEndOf="@+id/iv_naver_logo"
+-        app:srcCompat="@drawable/ic_logo_kakao" />
+-
+-    <TextView
+-        android:id="@+id/tv_sign_in_find"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:layout_marginStart="130dp"
+-        android:layout_marginBottom="268dp"
+-        android:text="@string/forgot_password"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintStart_toStartOf="parent" />
+-
+-    <TextView
+-        android:id="@+id/tv_sign_in_sign_up"
+-        android:layout_width="wrap_content"
+-        android:layout_height="wrap_content"
+-        android:layout_marginStart="18dp"
+-        android:layout_marginBottom="268dp"
+-        android:autofillHints=""
+-        android:importantForAutofill="no"
+-        android:text="@string/signup"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintStart_toEndOf="@+id/tv_sign_in_find" />
+-
+-</androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/res/layout/week4_relative.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!--<?xml version=\"1.0\" encoding=\"utf-8\"?>-->\r\n<!--<RelativeLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"-->\r\n<!--    xmlns:app=\"http://schemas.android.com/apk/res-auto\"-->\r\n<!--    xmlns:tools=\"http://schemas.android.com/tools\"-->\r\n<!--    android:layout_width=\"match_parent\"-->\r\n<!--    android:layout_height=\"match_parent\">-->\r\n\r\n\r\n<!--    <TextView-->\r\n<!--        android:id=\"@+id/tv_sign_in_title\"-->\r\n<!--        android:layout_width=\"wrap_content\"-->\r\n<!--        android:layout_height=\"wrap_content\"-->\r\n<!--        android:text=\"@string/sign_in\"-->\r\n<!--        android:layout_centerHorizontal=\"true\"-->\r\n<!--        android:layout_marginTop=\"150dp\"-->\r\n<!--        android:textSize=\"30sp\"-->\r\n<!--        android:textStyle=\"bold\"/>-->\r\n\r\n\r\n<!--    <EditText-->\r\n<!--        android:id=\"@+id/et_sign_in_email\"-->\r\n<!--        android:layout_width=\"388dp\"-->\r\n<!--        android:layout_height=\"48dp\"-->\r\n<!--        android:ems=\"10\"-->\r\n<!--        android:importantForAutofill=\"no\"-->\r\n<!--        android:inputType=\"textEmailAddress\"-->\r\n<!--        android:text=\"@string/user_id\"-->\r\n<!--        android:layout_below=\"@id/tv_sign_in_title\"-->\r\n<!--        android:layout_marginTop=\"15dp\"-->\r\n<!--        android:layout_centerHorizontal=\"true\"/>-->\r\n\r\n<!--    <EditText-->\r\n<!--        android:id=\"@+id/et_sign_in_password\"-->\r\n<!--        android:layout_width=\"388dp\"-->\r\n<!--        android:layout_height=\"48dp\"-->\r\n<!--        android:ems=\"10\"-->\r\n<!--        android:inputType=\"textPassword\"-->\r\n<!--        android:hint=\"@string/user_password\"-->\r\n<!--        android:layout_below=\"@id/et_sign_in_email\"-->\r\n<!--        android:layout_marginTop=\"10dp\"-->\r\n<!--        tools:ignore=\"Autofill\"-->\r\n<!--        android:layout_centerHorizontal=\"true\"/>-->\r\n<!--    <Button-->\r\n<!--        android:id=\"@+id/btn_sign_in_login\"-->\r\n<!--        android:layout_width=\"wrap_content\"-->\r\n<!--        android:layout_height=\"wrap_content\"-->\r\n<!--        android:layout_gravity=\"center\"-->\r\n<!--        android:text=\"@string/btn_sign_in\"-->\r\n<!--        android:contentDescription=\"@string/btn_sign_in_button\"-->\r\n<!--        android:layout_below=\"@id/et_sign_in_password\"-->\r\n<!--        android:layout_marginTop=\"15dp\"-->\r\n<!--        android:layout_centerHorizontal=\"true\"/>-->\r\n\r\n<!--    <RelativeLayout-->\r\n<!--        android:layout_width=\"match_parent\"-->\r\n<!--        android:layout_height=\"wrap_content\"-->\r\n<!--        android:layout_below=\"@id/btn_sign_in_login\"-->\r\n<!--        android:layout_marginTop=\"15dp\">-->\r\n<!--        <ImageView-->\r\n<!--            android:id=\"@+id/iv_google_logo\"-->\r\n<!--            android:layout_width=\"45dp\"-->\r\n<!--            android:layout_height=\"45dp\"-->\r\n<!--            app:srcCompat=\"@drawable/ic_logo_google\"-->\r\n<!--            android:layout_toStartOf=\"@id/iv_naver_logo\"-->\r\n<!--            android:layout_marginEnd=\"5dp\"/>-->\r\n\r\n<!--        <ImageView-->\r\n<!--            android:id=\"@+id/iv_naver_logo\"-->\r\n<!--            android:layout_width=\"45dp\"-->\r\n<!--            android:layout_height=\"45dp\"-->\r\n<!--            android:layout_centerHorizontal=\"true\"-->\r\n<!--            app:srcCompat=\"@drawable/ic_logo_naver\" />-->\r\n\r\n<!--        <ImageView-->\r\n<!--            android:id=\"@+id/iv_kakao_logo\"-->\r\n<!--            android:layout_width=\"45dp\"-->\r\n<!--            android:layout_height=\"45dp\"-->\r\n<!--            app:srcCompat=\"@drawable/ic_logo_kakao\"-->\r\n<!--            android:layout_toEndOf=\"@id/iv_naver_logo\"-->\r\n<!--            android:layout_marginStart=\"5dp\"/>-->\r\n\r\n\r\n<!--        <RelativeLayout-->\r\n<!--            android:layout_width=\"wrap_content\"-->\r\n<!--            android:layout_height=\"wrap_content\"-->\r\n<!--            android:layout_below=\"@id/iv_naver_logo\"-->\r\n<!--            android:layout_marginTop=\"15dp\"-->\r\n<!--            android:layout_centerHorizontal=\"true\">-->\r\n\r\n\r\n<!--            <TextView-->\r\n<!--                android:id=\"@+id/tv_sign_in_find\"-->\r\n<!--                android:layout_width=\"wrap_content\"-->\r\n<!--                android:layout_height=\"wrap_content\"-->\r\n<!--                android:text=\"@string/forgot_password\" />-->\r\n<!--            <TextView-->\r\n<!--                android:id=\"@+id/tv_sign_in_sign_up\"-->\r\n<!--                android:layout_width=\"wrap_content\"-->\r\n<!--                android:layout_height=\"wrap_content\"-->\r\n<!--                android:text=\"@string/signup\"-->\r\n<!--                android:layout_marginStart=\"5dp\"-->\r\n<!--                android:layout_alignTop=\"@id/tv_sign_in_find\"-->\r\n<!--                android:layout_toEndOf=\"@id/tv_sign_in_find\"/>-->\r\n<!--        </RelativeLayout>-->\r\n\r\n\r\n\r\n<!--    </RelativeLayout>-->\r\n\r\n<!--</RelativeLayout>-->
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/week4_relative.xml b/app/src/main/res/layout/week4_relative.xml
+--- a/app/src/main/res/layout/week4_relative.xml	(revision e154905a1e28ea61a18be597e636da6b456b36f8)
++++ b/app/src/main/res/layout/week4_relative.xml	(date 1748229113153)
+@@ -1,110 +1,110 @@
+-<!--<?xml version="1.0" encoding="utf-8"?>-->
+-<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+-<!--    xmlns:tools="http://schemas.android.com/tools"-->
+-<!--    android:layout_width="match_parent"-->
+-<!--    android:layout_height="match_parent">-->
++<?xml version="1.0" encoding="utf-8"?>
++<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent">
+ 
+ 
+-<!--    <TextView-->
+-<!--        android:id="@+id/tv_sign_in_title"-->
+-<!--        android:layout_width="wrap_content"-->
+-<!--        android:layout_height="wrap_content"-->
+-<!--        android:text="@string/sign_in"-->
+-<!--        android:layout_centerHorizontal="true"-->
+-<!--        android:layout_marginTop="150dp"-->
+-<!--        android:textSize="30sp"-->
+-<!--        android:textStyle="bold"/>-->
++    <TextView
++        android:id="@+id/tv_sign_in_title"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:text="@string/sign_in"
++        android:layout_centerHorizontal="true"
++        android:layout_marginTop="150dp"
++        android:textSize="30sp"
++        android:textStyle="bold"/>
+ 
+ 
+-<!--    <EditText-->
+-<!--        android:id="@+id/et_sign_in_email"-->
+-<!--        android:layout_width="388dp"-->
+-<!--        android:layout_height="48dp"-->
+-<!--        android:ems="10"-->
+-<!--        android:importantForAutofill="no"-->
+-<!--        android:inputType="textEmailAddress"-->
+-<!--        android:text="@string/user_id"-->
+-<!--        android:layout_below="@id/tv_sign_in_title"-->
+-<!--        android:layout_marginTop="15dp"-->
+-<!--        android:layout_centerHorizontal="true"/>-->
++    <EditText
++        android:id="@+id/et_sign_in_email"
++        android:layout_width="388dp"
++        android:layout_height="48dp"
++        android:ems="10"
++        android:importantForAutofill="no"
++        android:inputType="textEmailAddress"
++        android:text="@string/user_id"
++        android:layout_below="@id/tv_sign_in_title"
++        android:layout_marginTop="15dp"
++        android:layout_centerHorizontal="true"/>
+ 
+-<!--    <EditText-->
+-<!--        android:id="@+id/et_sign_in_password"-->
+-<!--        android:layout_width="388dp"-->
+-<!--        android:layout_height="48dp"-->
+-<!--        android:ems="10"-->
+-<!--        android:inputType="textPassword"-->
+-<!--        android:hint="@string/user_password"-->
+-<!--        android:layout_below="@id/et_sign_in_email"-->
+-<!--        android:layout_marginTop="10dp"-->
+-<!--        tools:ignore="Autofill"-->
+-<!--        android:layout_centerHorizontal="true"/>-->
+-<!--    <Button-->
+-<!--        android:id="@+id/btn_sign_in_login"-->
+-<!--        android:layout_width="wrap_content"-->
+-<!--        android:layout_height="wrap_content"-->
+-<!--        android:layout_gravity="center"-->
+-<!--        android:text="@string/btn_sign_in"-->
+-<!--        android:contentDescription="@string/btn_sign_in_button"-->
+-<!--        android:layout_below="@id/et_sign_in_password"-->
+-<!--        android:layout_marginTop="15dp"-->
+-<!--        android:layout_centerHorizontal="true"/>-->
++    <EditText
++        android:id="@+id/et_sign_in_password"
++        android:layout_width="388dp"
++        android:layout_height="48dp"
++        android:ems="10"
++        android:inputType="textPassword"
++        android:hint="@string/user_password"
++        android:layout_below="@id/et_sign_in_email"
++        android:layout_marginTop="10dp"
++        tools:ignore="Autofill"
++        android:layout_centerHorizontal="true"/>
++    <Button
++        android:id="@+id/btn_sign_in_login"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_gravity="center"
++        android:text="@string/btn_sign_in"
++        android:contentDescription="@string/btn_sign_in_button"
++        android:layout_below="@id/et_sign_in_password"
++        android:layout_marginTop="15dp"
++        android:layout_centerHorizontal="true"/>
+ 
+-<!--    <RelativeLayout-->
+-<!--        android:layout_width="match_parent"-->
+-<!--        android:layout_height="wrap_content"-->
+-<!--        android:layout_below="@id/btn_sign_in_login"-->
+-<!--        android:layout_marginTop="15dp">-->
+-<!--        <ImageView-->
+-<!--            android:id="@+id/iv_google_logo"-->
+-<!--            android:layout_width="45dp"-->
+-<!--            android:layout_height="45dp"-->
+-<!--            app:srcCompat="@drawable/ic_logo_google"-->
+-<!--            android:layout_toStartOf="@id/iv_naver_logo"-->
+-<!--            android:layout_marginEnd="5dp"/>-->
++    <RelativeLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:layout_below="@id/btn_sign_in_login"
++        android:layout_marginTop="15dp">
++        <ImageView
++            android:id="@+id/iv_google_logo"
++            android:layout_width="45dp"
++            android:layout_height="45dp"
++            app:srcCompat="@drawable/ic_logo_google"
++            android:layout_toStartOf="@id/iv_naver_logo"
++            android:layout_marginEnd="5dp"/>
+ 
+-<!--        <ImageView-->
+-<!--            android:id="@+id/iv_naver_logo"-->
+-<!--            android:layout_width="45dp"-->
+-<!--            android:layout_height="45dp"-->
+-<!--            android:layout_centerHorizontal="true"-->
+-<!--            app:srcCompat="@drawable/ic_logo_naver" />-->
++        <ImageView
++            android:id="@+id/iv_naver_logo"
++            android:layout_width="45dp"
++            android:layout_height="45dp"
++            android:layout_centerHorizontal="true"
++            app:srcCompat="@drawable/ic_logo_naver" />
+ 
+-<!--        <ImageView-->
+-<!--            android:id="@+id/iv_kakao_logo"-->
+-<!--            android:layout_width="45dp"-->
+-<!--            android:layout_height="45dp"-->
+-<!--            app:srcCompat="@drawable/ic_logo_kakao"-->
+-<!--            android:layout_toEndOf="@id/iv_naver_logo"-->
+-<!--            android:layout_marginStart="5dp"/>-->
++        <ImageView
++            android:id="@+id/iv_kakao_logo"
++            android:layout_width="45dp"
++            android:layout_height="45dp"
++            app:srcCompat="@drawable/ic_logo_kakao"
++            android:layout_toEndOf="@id/iv_naver_logo"
++            android:layout_marginStart="5dp"/>
+ 
+ 
+-<!--        <RelativeLayout-->
+-<!--            android:layout_width="wrap_content"-->
+-<!--            android:layout_height="wrap_content"-->
+-<!--            android:layout_below="@id/iv_naver_logo"-->
+-<!--            android:layout_marginTop="15dp"-->
+-<!--            android:layout_centerHorizontal="true">-->
++        <RelativeLayout
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            android:layout_below="@id/iv_naver_logo"
++            android:layout_marginTop="15dp"
++            android:layout_centerHorizontal="true">
+ 
+ 
+-<!--            <TextView-->
+-<!--                android:id="@+id/tv_sign_in_find"-->
+-<!--                android:layout_width="wrap_content"-->
+-<!--                android:layout_height="wrap_content"-->
+-<!--                android:text="@string/forgot_password" />-->
+-<!--            <TextView-->
+-<!--                android:id="@+id/tv_sign_in_sign_up"-->
+-<!--                android:layout_width="wrap_content"-->
+-<!--                android:layout_height="wrap_content"-->
+-<!--                android:text="@string/signup"-->
+-<!--                android:layout_marginStart="5dp"-->
+-<!--                android:layout_alignTop="@id/tv_sign_in_find"-->
+-<!--                android:layout_toEndOf="@id/tv_sign_in_find"/>-->
+-<!--        </RelativeLayout>-->
++            <TextView
++                android:id="@+id/tv_sign_in_find"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="@string/forgot_password" />
++            <TextView
++                android:id="@+id/tv_sign_in_sign_up"
++                android:layout_width="wrap_content"
++                android:layout_height="wrap_content"
++                android:text="@string/signup"
++                android:layout_marginStart="5dp"
++                android:layout_alignTop="@id/tv_sign_in_find"
++                android:layout_toEndOf="@id/tv_sign_in_find"/>
++        </RelativeLayout>
+ 
+ 
+ 
+-<!--    </RelativeLayout>-->
++    </RelativeLayout>
+ 
+-<!--</RelativeLayout>-->
+\ No newline at end of file
++</RelativeLayout>
+\ No newline at end of file

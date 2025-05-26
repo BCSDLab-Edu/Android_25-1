@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+
+    <string name="tv_main_num">0</string>
+    <string name="tv_main2_num">0</string>
+    <string name="btn_main_toast">Toast</string>
+    <string name="btn_main_count">Count</string>
+    <string name="btn_main_random">Random</string>
+
+    <string name="notification_name">알림 제목</string>
+    <string name="notification_title">알림 타이틀</string>
+    <string name="notification_content">알림 내용</string>
+    <string name="notification_descriptionText">알림 설명</string>
+
+    <string name="notification_seemore">더보기</string>
+    <string name="notification_close">닫기</string>
+
 </resources>

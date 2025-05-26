@@ -1,0 +1,26 @@
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_2025-05-12_오후_9_14_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-05-12_오후_9_14_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-05-12_오후_9_14_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-05-12_오후_9_14_[Changes]/shelved.patch	(revision 5b3b253611e3acacccf75a9c54e0bdebeb47c3f7)
++++ /dev/null	(revision 5b3b253611e3acacccf75a9c54e0bdebeb47c3f7)
+@@ -1,19 +0,0 @@
+-Index: app/src/main/java/com/example/bcsd_android_2025_1/MainActivity.kt
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>    package com.example.bcsd_android_2025_1\r\n\r\n    import android.content.Intent\r\n    import android.os.Bundle\r\n    import android.widget.Button\r\n    import android.widget.TextView\r\n    import android.widget.Toast\r\n    import androidx.activity.result.contract.ActivityResultContracts\r\n    import androidx.appcompat.app.AppCompatActivity\r\n    import androidx.core.os.bundleOf\r\n\r\n    class MainActivity : AppCompatActivity() {\r\n\r\n        var countData = 0\r\n\r\n        private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {\r\n            result ->\r\n            if (result.resultCode == RESULT_OK) {\r\n                val data = result.data\r\n                val randomNum = data?.getIntExtra(\"randomNum\",-1) ?: -1\r\n\r\n                val tvResult: TextView = findViewById(R.id.tv_main_num)\r\n                tvResult.text = randomNum.toString()\r\n\r\n                countData = randomNum\r\n\r\n            }\r\n        }\r\n\r\n        override fun onCreate(savedInstanceState: Bundle?) {\r\n            super.onCreate(savedInstanceState)\r\n            setContentView(R.layout.activity_main)\r\n\r\n\r\n            val btnToast: Button = findViewById(R.id.btn_main_toast)\r\n\r\n            btnToast.setOnClickListener {\r\n                Toast.makeText(this@MainActivity, R.string.btn_main_toast, Toast.LENGTH_SHORT).show()\r\n            }\r\n\r\n            val tvResult: TextView = findViewById(R.id.tv_main_num)\r\n\r\n            val btnCount: Button = findViewById(R.id.btn_main_count)\r\n\r\n            btnCount.setOnClickListener {\r\n                countData += 1\r\n                tvResult.text = countData.toString()\r\n            }\r\n\r\n            val btnRandom: Button = findViewById(R.id.btn_main_random)\r\n\r\n            btnRandom.setOnClickListener {\r\n                val randomBundle = bundleOf(\"randomData\" to countData)\r\n                val intent = Intent(this, SecondActivity::class.java)\r\n                intent.putExtras(randomBundle)\r\n                startForResult.launch(intent)\r\n            }\r\n\r\n\r\n\r\n        }\r\n    }\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/java/com/example/bcsd_android_2025_1/MainActivity.kt b/app/src/main/java/com/example/bcsd_android_2025_1/MainActivity.kt
+---- a/app/src/main/java/com/example/bcsd_android_2025_1/MainActivity.kt	(revision b32b92fa71a19ca5a1c9a2e4ca9744a33f9e36bc)
+-+++ b/app/src/main/java/com/example/bcsd_android_2025_1/MainActivity.kt	(date 1747051634312)
+-@@ -11,7 +11,7 @@
+- 
+-     class MainActivity : AppCompatActivity() {
+- 
+--        var countData = 0
+-+        private var countData = 0
+- 
+-         private val startForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+-             result ->
