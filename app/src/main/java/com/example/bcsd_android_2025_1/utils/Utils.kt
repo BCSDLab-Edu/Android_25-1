@@ -2,12 +2,15 @@ package com.example.bcsd_android_2025_1.utils
 
 import android.content.Context
 import android.content.res.Resources
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Build
+import android.util.Log
 import android.util.Size
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.graphics.drawable.toBitmap
 import androidx.core.graphics.drawable.toDrawable
 import com.example.bcsd_android_2025_1.R
 import java.io.FileNotFoundException
@@ -15,12 +18,29 @@ import java.io.InputStream
 import java.util.Locale
 import java.util.concurrent.TimeUnit
 
-fun Long.toDuration(): String {
+fun Long.toDurationFromSecond(): String {
+    val hours = TimeUnit.SECONDS.toHours(this)
+    val minutes =
+        TimeUnit.SECONDS.toMinutes(this) - TimeUnit.HOURS.toMinutes(hours)
+    val newSeconds =
+        this - TimeUnit.HOURS.toSeconds(hours) - TimeUnit.MINUTES.toSeconds(minutes)
+
+    val duration = if (hours.toInt() != 0) {
+        String.format(Locale.ROOT, "%02d:%02d:%02d", hours, minutes, newSeconds)
+    } else {
+        String.format(Locale.ROOT, "%02d:%02d", minutes, newSeconds)
+    }
+    return duration
+}
+
+fun Long.toDurationFromMillisecond(): String {
     val hours = TimeUnit.MILLISECONDS.toHours(this)
     val minutes =
         TimeUnit.MILLISECONDS.toMinutes(this) - TimeUnit.HOURS.toMinutes(hours)
     val seconds =
         TimeUnit.MILLISECONDS.toSeconds(this) - TimeUnit.MINUTES.toSeconds(minutes)
+
+    Log.d("Duration", "Hours: $hours, Minutes: $minutes, Seconds: $seconds")
 
     val duration = if (hours.toInt() != 0) {
         String.format(Locale.ROOT, "%02d:%02d:%02d", hours, minutes, seconds)
@@ -29,6 +49,17 @@ fun Long.toDuration(): String {
     }
     return duration
 }
+
+fun Uri.getBitmapAlbumArt(
+    context: Context,
+    resources: Resources,
+    width: Int = 500,
+    height: Int = 500
+): Bitmap {
+    return getAlbumArt(context, resources, width, height)?.toBitmap()
+        ?: BitmapFactory.decodeResource(resources, R.drawable.ic_no_album_art)
+}
+
 
 fun Uri.getAlbumArt(
     context: Context,

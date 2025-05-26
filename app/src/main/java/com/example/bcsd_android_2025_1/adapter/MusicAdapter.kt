@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bcsd_android_2025_1.R
 import com.example.bcsd_android_2025_1.model.MusicData
 import com.example.bcsd_android_2025_1.utils.getAlbumArt
-import com.example.bcsd_android_2025_1.utils.toDuration
+import com.example.bcsd_android_2025_1.utils.toDurationFromMillisecond
 
 class MusicAdapter : RecyclerView.Adapter<MusicAdapter.ViewHolder>() {
     var dataList = mutableListOf<MusicData>()
@@ -24,7 +24,7 @@ class MusicAdapter : RecyclerView.Adapter<MusicAdapter.ViewHolder>() {
             val item = dataList[position]
             titleTextView.text = item.title
             artistTextView.text = item.artist
-            durationTextView.text = item.duration.toDuration()
+            durationTextView.text = item.duration.toDurationFromMillisecond()
 
             val albumArt = item.albumUri.toUri().getAlbumArt(itemView.context, itemView.resources)
             albumArtImage.setImageDrawable(albumArt)
