@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="text_toast">TOAST</string>
+    <string name="text_count">COUNT</string>
+    <string name="text_random">RANDOM</string>
+    <string name="toast_message">우하하</string>
+    <string name="text_title">제목이요</string>
+    <string name="text_context">랜덤값을 볼까요</string>
+    <string name="text_notification_plus">더보기</string>
+    <string name="text_notification_close">닫기</string>
+    <string name="text_information">Here is a random number between 0 and </string>
 </resources>
