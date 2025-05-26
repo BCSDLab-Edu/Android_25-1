@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
 
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -19,11 +19,12 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="300dp"/>
 
+
     <Button
         android:id="@+id/button_count"
         android:layout_width="80dp"
         android:layout_height="35dp"
-        android:text="@string/count"
+        android:text="COUNT"
         android:textSize="9dp"
         android:backgroundTint="@color/puple"
         app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -35,7 +36,7 @@
         android:id="@+id/button_toast"
         android:layout_width="80dp"
         android:layout_height="35dp"
-        android:text="@string/toast"
+        android:text="TOAST"
         android:textSize="9dp"
         android:backgroundTint="@color/puple"
         app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -56,4 +57,6 @@
         android:layout_marginStart="180dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
