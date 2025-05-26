@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlin.random.Random
 
 class SecondActivity : AppCompatActivity() {
+    var randomNumber = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
@@ -15,14 +16,16 @@ class SecondActivity : AppCompatActivity() {
         val currentCount = intent.getIntExtra("currentCount", 0)
         val randomNumber = Random.nextInt(0, currentCount + 1)
 
-        val randomTextView: TextView = findViewById(R.id.textview_random)
-        randomTextView.text ="$randomNumber"
+        val randomTextView: TextView = findViewById(R.id.textview_random_message)
+        randomTextView.text = "$randomNumber"
 
+        saveRandomToPreferences(randomNumber)
 
-        val resultIntent = Intent(this, MainActivity::class.java).apply {
-            putExtra("randomNumber", randomNumber)
-        }
-
-        setResult(Activity.RESULT_OK, resultIntent)
     }
+
+    private fun saveRandomToPreferences(random: Int) {
+        val prefs = getSharedPreferences("rand_prefs", MODE_PRIVATE)
+        prefs.edit().putInt("randomNumber", random).apply()
+    }
+
 }
