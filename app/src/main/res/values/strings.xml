@@ -1,3 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="toast">TOAST</string>
+    <string name="count">COUNT</string>
+    <string name="random">RANDOM</string>
+    <string name="notification_title">랜덤 알림</string>
+    <string name="notification_content">랜덤 결과를 확인해보세요!</string>
+    <string name="channel_name">RandomChannel</string>
+    <string name="channel_description">랜덤 결과 알림 채널</string>
+    <string name="button_more">더 보기</string>
+    <string name="button_close">닫기</string>
 </resources>
