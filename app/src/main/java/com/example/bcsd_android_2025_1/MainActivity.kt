@@ -1,141 +1,155 @@
 package com.example.bcsd_android_2025_1
 
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.content.Context
 import android.content.Intent
-import android.graphics.BitmapFactory
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
-
-
-const val NOTIFICATION_CHANNEL_ID = "random_channel_id"
-const val NOTIFICATION_ID = 1001
-const val CLOSE_NOTIFICATION = "CLOSE_NOTIFICATION_ACTION"
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.bcsd_android_2025_1.model.MusicData
 
 class MainActivity : AppCompatActivity() {
 
-    private var count = 0
-    private lateinit var countText: TextView
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var permissionMessage: TextView
+    private lateinit var openSettingsButton: Button
+    private lateinit var musicAdapter: MusicAdapter
+
+    private val musicList = mutableListOf<MusicData>()
+
+    private val requestPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted ->
+        if (isGranted) {
+            showMusicList()
+        } else {
+            showPermissionDialog()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        countText = findViewById(R.id.Count)
-        val countButton = findViewById<Button>(R.id.CountButton)
-        val toastButton = findViewById<Button>(R.id.ToastButton)
-        val randomButton = findViewById<Button>(R.id.RandomButton)
+        recyclerView = findViewById(R.id.MusicRecyclerView)
+        permissionMessage = findViewById(R.id.text1)
+        openSettingsButton = findViewById(R.id.OpenButton)
 
-        countButton.setOnClickListener {
-            count++
-            countText.text = count.toString()
+        musicAdapter = MusicAdapter(musicList)
+        recyclerView.adapter = musicAdapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        recyclerView.visibility = View.GONE
+        permissionMessage.visibility = View.GONE
+        openSettingsButton.visibility = View.GONE
+
+        if (hasPermission()) {
+            showMusicList()
+        } else {
+            requestPermission()
         }
 
-        toastButton.setOnClickListener {
-            Toast.makeText(this, getString(R.string.toast_message), Toast.LENGTH_SHORT).show()
-        }
-
-        randomButton.setOnClickListener {
-            createNotificationChannel()
-            showNotification()
-        }
-
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            requestPermissions(arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), 1001)
-        }
-    }
-
-    override fun onNewIntent(intent: Intent) {
-        super.onNewIntent(intent)
-        setIntent(intent)
-
-        if (intent.action == CLOSE_NOTIFICATION) {
-            NotificationManagerCompat.from(this).cancel(NOTIFICATION_ID)
-            return
-        }
-
-        val random = intent.getIntExtra("random_value", -1)
-        if (random != -1) {
-            count = random
-            countText.text = count.toString()
+        openSettingsButton.setOnClickListener {
+            val intent = Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+            val uri = Uri.fromParts("package", packageName, null)
+            intent.data = uri
+            startActivity(intent)
         }
     }
 
-    private fun createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val channel = NotificationChannel(
-                NOTIFICATION_CHANNEL_ID,
-                getString(R.string.channel_name),
-                NotificationManager.IMPORTANCE_DEFAULT
-            ).apply {
-                description = getString(R.string.channel_description)
+    private fun hasPermission(): Boolean {
+        val permission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            android.Manifest.permission.READ_MEDIA_AUDIO
+        } else {
+            android.Manifest.permission.READ_EXTERNAL_STORAGE
+        }
+        return ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun requestPermission() {
+        val permission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            android.Manifest.permission.READ_MEDIA_AUDIO
+        } else {
+            android.Manifest.permission.READ_EXTERNAL_STORAGE
+        }
+
+        when {
+            ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED -> {
+                showMusicList()
             }
-
-            val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-            manager.createNotificationChannel(channel)
+            shouldShowRequestPermissionRationale(permission) -> {
+                showPermissionDialog()
+            }
+            else -> {
+                requestPermissionLauncher.launch(permission)
+            }
         }
     }
 
-    private fun getDeleteIntent(): PendingIntent {
-        val intent = Intent(this, MainActivity::class.java).apply {
-            action = CLOSE_NOTIFICATION
-            flags = Intent.FLAG_ACTIVITY_SINGLE_TOP
-        }
-        return PendingIntent.getActivity(
-            this,
-            1,
-            intent,
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-        )
+    private fun showPermissionDialog() {
+        AlertDialog.Builder(this)
+            .setTitle(getString(R.string.permission_dialog_title))
+            .setMessage(getString(R.string.permission_dialog_message))
+            .setPositiveButton(getString(R.string.ok)) { dialog, _ ->
+                dialog.dismiss()
+                showPermissionUI()
+            }
+            .setNegativeButton(getString(R.string.cancel)) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .show()
     }
 
-    private fun showNotification() {
-        val contentIntent = Intent(this, SecondActivity::class.java).apply {
-            putExtra("count_value", count)
-            putExtra("notification_id", NOTIFICATION_ID)
-            flags = Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP
-        }
+    private fun showPermissionUI() {
+        recyclerView.visibility = View.GONE
+        permissionMessage.visibility = View.VISIBLE
+        openSettingsButton.visibility = View.VISIBLE
+    }
 
-        val pendingContentIntent = PendingIntent.getActivity(
-            this,
-            0,
-            contentIntent,
-            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+    private fun showMusicList() {
+        recyclerView.visibility = View.VISIBLE
+        permissionMessage.visibility = View.GONE
+        openSettingsButton.visibility = View.GONE
+
+        loadMusicList()
+    }
+
+    private fun loadMusicList() {
+        musicList.clear()
+
+        val uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
+        val projection = arrayOf(
+            MediaStore.Audio.Media.TITLE,
+            MediaStore.Audio.Media.ARTIST,
+            MediaStore.Audio.Media.DURATION
         )
 
-        val largeImageBitmap = BitmapFactory.decodeResource(resources, R.drawable.fr)
-        val builder = NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
-            .setSmallIcon(R.drawable.fr)
-            .setContentTitle(getString(R.string.random_check))
-            .setContentText(getString(R.string.button_check))
-            .setContentIntent(pendingContentIntent)
-            .addAction(
-                R.drawable.fr,
-                getString(R.string.more),
-                pendingContentIntent
-            ) .setAutoCancel(true)
-            .addAction(
-                R.drawable.fr,
-                getString(R.string.text_close),
-                getDeleteIntent()
-            )
-            .setAutoCancel(true)
-            .setStyle(NotificationCompat.BigPictureStyle()
-                .bigPicture(largeImageBitmap)
-                .bigLargeIcon(largeImageBitmap)
-            )
+        val cursor = contentResolver.query(uri, projection, null, null, null)
+        cursor?.use {
+            while (it.moveToNext()) {
+                val title = it.getString(0)
+                val artist = it.getString(1)
+                val duration = it.getLong(2)
+                musicList.add(MusicData(title, artist, duration))
+            }
+        }
 
-        with(NotificationManagerCompat.from(this)) {
-            notify(NOTIFICATION_ID, builder.build())
+        musicAdapter.notifyDataSetChanged()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (hasPermission()) {
+            showMusicList()
         }
     }
 }

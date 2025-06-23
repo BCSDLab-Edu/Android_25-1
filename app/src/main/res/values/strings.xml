@@ -8,9 +8,17 @@
     <string name="more">더보기</string>
     <string name="text_close">닫기</string>
 
+    <string name="permission_dialog_title">권한이 필요합니다</string>
+    <string name="permission_dialog_message">권한이 필요합니다. 설정으로 이동하시겠습니까?</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
     <string name="title_activity_random_result_receiver.kt">RandomResultReceiver.kt</string>
     <string name="title_activity_random_result_receiver">RandomResultReceiver</string>
     <string name="title_activity_constants">Constants</string>
+    <string name="title_activity_music_adapter.kt">MusicAdapter.kt</string>
+    <string name="title_activity_music_adapter">MusicAdapter</string>
+    <string name="title_activity_music_data.kt">MusicData.kt</string>
 
 
 </resources>

@@ -1,47 +1,39 @@
 package com.example.bcsd_android_2025_1
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.bcsd_android_2025_1.ui.theme.Android_251Theme
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.example.bcsd_android_2025_1.model.MusicData
 
-class MusicAdapter : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            Android_251Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
+class MusicAdapter(private val musicList: List<MusicData>) :
+    RecyclerView.Adapter<MusicAdapter.MusicViewHolder>() {
+
+    inner class MusicViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val title: TextView = view.findViewById(R.id.titleText)
+        val artist: TextView = view.findViewById(R.id.artistText)
+        val duration: TextView = view.findViewById(R.id.durationText)
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MusicViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.music, parent, false)
+        return MusicViewHolder(view)
+    }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Android_251Theme {
-        Greeting("Android")
+    override fun onBindViewHolder(holder: MusicViewHolder, position: Int) {
+        val music = musicList[position]
+        holder.title.text = music.title
+        holder.artist.text = music.artist
+        holder.duration.text = formatDuration(music.duration)
+    }
+
+    override fun getItemCount(): Int = musicList.size
+
+    private fun formatDuration(ms: Long): String {
+        val minutes = ms / 1000 / 60
+        val seconds = (ms / 1000) % 60
+        return "%d:%02d".format(minutes, seconds)
     }
 }
