@@ -1,3 +1,24 @@
 <resources>
-    <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="app_name">Wonder Why</string>
+    <string name="toast_message">To Heart</string>
+    <string name="channel_name">랜덤 알림 채널</string>
+    <string name="channel_description">랜덤 숫자 알림을 위한 채널입니다.</string>
+    <string name="random_check">날씨 좋은 날 지구에서</string>
+    <string name="button_check">fromm앱에서 알림이 도착했습니다.</string>
+    <string name="more">더보기</string>
+    <string name="text_close">닫기</string>
+
+    <string name="permission_dialog_title">권한이 필요합니다</string>
+    <string name="permission_dialog_message">권한이 필요합니다. 설정으로 이동하시겠습니까?</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="title_activity_random_result_receiver.kt">RandomResultReceiver.kt</string>
+    <string name="title_activity_random_result_receiver">RandomResultReceiver</string>
+    <string name="title_activity_constants">Constants</string>
+    <string name="title_activity_music_adapter.kt">MusicAdapter.kt</string>
+    <string name="title_activity_music_adapter">MusicAdapter</string>
+    <string name="title_activity_music_data.kt">MusicData.kt</string>
+
+
 </resources>
