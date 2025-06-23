@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="need_permission_text">파일을 보려면 권한을 허용해야합니다.</string>
+    <string name="move_to_setting">설정으로 이동</string>
+    <string name="default_time">00:00</string>
+    <string name="default_name">Unknown</string>
+    <string name="permission_title_dialog">권한 설정</string>
+    <string name="permission_message_dialog">권한을 설정하세요.</string>
+    <string name="ok">확인</string>
+    <string name="no">거부</string>
 </resources>
