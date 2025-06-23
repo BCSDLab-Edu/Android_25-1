@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_item_recycler_view"
+    android:layout_marginBottom="5dp" >
+
+    <ImageView
+        android:id="@+id/imageview_item"
+        app:srcCompat="@drawable/album_image_default_aespa"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title_textview_item"
+        android:textSize="20sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageview_item"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/name_textview_item"
+        android:textSize="15sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintTop_toBottomOf="@id/title_textview_item"
+        app:layout_constraintStart_toEndOf="@id/imageview_item"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/time_textview_item"
+        android:textSize="15sp"
+        android:text="@string/default_time"
+        app:layout_constraintTop_toBottomOf="@id/title_textview_item"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
