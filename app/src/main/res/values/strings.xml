@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="need_permission_text">파일을 보려면 권한을 허용해야합니다.</string>
+    <string name="move_to_setting">설정으로 이동</string>
+    <string name="default_time">00:00</string>
+    <string name="default_name">Unknown</string>
+    <string name="default_title">제목 없음</string>
+    <string name="permission_title_dialog">권한 설정</string>
+    <string name="permission_message_dialog">권한을 설정하세요.</string>
+    <string name="ok">확인</string>
+    <string name="no">거부</string>
+    <string name="battery_alert_message">※배터리 잔량이 20%이하입니다</string>
+    <string name="playing_music_view">재생 중인 음악 : %s</string>
+    <string name="playing_music_default">재생 중인 음악 없음</string>
+    <string name="notification_playing_music">음악 재생중</string>
 </resources>
