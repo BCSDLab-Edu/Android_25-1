@@ -9,10 +9,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerViewAdapter(private val items:ArrayList<ListData>): RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+class RecyclerViewAdapter(private val items:MutableList<ListData>, private val itemClickListener: OnItemClickListener): RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflatedView = LayoutInflater.from(parent.context).inflate(R.layout.item_recyclerview, parent, false)
         return ViewHolder(inflatedView)
+    }
+
+    interface OnItemClickListener{
+        fun itemClick(item:ListData)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -30,10 +34,9 @@ class RecyclerViewAdapter(private val items:ArrayList<ListData>): RecyclerView.A
             val timeItem: TextView = view.findViewById(R.id.time_textview_item)
             titleItem.text = item.title
             nameItem.text = item.name
-            timeItem.text = timeSet(item.time)
+            timeItem.text = item.time.timeSet()
 
             val retriever = MediaMetadataRetriever()
-
             try {
                 retriever.setDataSource(view.context, item.musicUri)
 
@@ -49,13 +52,17 @@ class RecyclerViewAdapter(private val items:ArrayList<ListData>): RecyclerView.A
                 e.printStackTrace()
                 imageItem.setImageResource(R.drawable.album_image_default_aespa)
             }
+
+            view.setOnClickListener{
+                itemClickListener.itemClick(item)
+            }
         }
     }
 
-    private fun timeSet(time:Long):String{
-        val hour = time/(1000*60*60)
-        val min = time/(1000*60)%60
-        val sec = time/1000%60
+    private fun Long.timeSet():String{
+        val hour = this/(1000*60*60)
+        val min = (this/(1000*60))%60
+        val sec = (this/1000)%60
         return if(hour>0){
             "%d:%02d:%02d".format(hour, min, sec)
         }else{

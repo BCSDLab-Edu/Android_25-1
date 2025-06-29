@@ -42,4 +42,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <TextView
+        android:id="@+id/playing_music_textview"
+        android:background="@color/purple_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text= "@string/playing_music_default"
+        android:textStyle="bold"
+        android:padding="10dp"
+        android:textSize="15sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
