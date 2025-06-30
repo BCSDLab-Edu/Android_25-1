@@ -1,0 +1,54 @@
+Index: app/src/main/java/com/example/bcsd_android_2025_1/NotificationReceiver.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.bcsd_android_2025_1\r\n\r\nimport android.content.BroadcastReceiver\r\nimport android.content.Context\r\nimport android.content.Intent\r\nimport android.app.NotificationManager\r\n\r\nclass NotificationReceiver : BroadcastReceiver() {\r\n    override fun onReceive(context: Context, intent: Intent) {\r\n        if (intent.action == \"ACTION_CLOSE_NOTIFICATION\") {\r\n            val manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager\r\n            manager.cancel(1001)\r\n        }\r\n    }\r\n}
+===================================================================
+diff --git a/app/src/main/java/com/example/bcsd_android_2025_1/NotificationReceiver.kt b/app/src/main/java/com/example/bcsd_android_2025_1/NotificationReceiver.kt
+--- a/app/src/main/java/com/example/bcsd_android_2025_1/NotificationReceiver.kt	(revision 4f6ece16be6f02f2dbafa328f24458f0f7c007d0)
++++ b/app/src/main/java/com/example/bcsd_android_2025_1/NotificationReceiver.kt	(date 1748276211662)
+@@ -12,4 +12,5 @@
+             manager.cancel(1001)
+         }
+     }
+-}
+\ No newline at end of file
++}
++
+Index: .idea/deploymentTargetSelector.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"deploymentTargetSelector\">\r\n    <selectionStates>\r\n      <SelectionState runConfigName=\"app\">\r\n        <option name=\"selectionMode\" value=\"DROPDOWN\" />\r\n      </SelectionState>\r\n      <SelectionState runConfigName=\"MyApplication.BCSD_Android_2025-1.app\">\r\n        <option name=\"selectionMode\" value=\"DROPDOWN\" />\r\n      </SelectionState>\r\n    </selectionStates>\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/deploymentTargetSelector.xml b/.idea/deploymentTargetSelector.xml
+--- a/.idea/deploymentTargetSelector.xml	(revision 4f6ece16be6f02f2dbafa328f24458f0f7c007d0)
++++ b/.idea/deploymentTargetSelector.xml	(date 1748343144801)
+@@ -2,10 +2,10 @@
+ <project version="4">
+   <component name="deploymentTargetSelector">
+     <selectionStates>
+-      <SelectionState runConfigName="app">
++      <SelectionState runConfigName="MyApplication.BCSD_Android_2025-1.app">
+         <option name="selectionMode" value="DROPDOWN" />
+       </SelectionState>
+-      <SelectionState runConfigName="MyApplication.BCSD_Android_2025-1.app">
++      <SelectionState runConfigName="app">
+         <option name="selectionMode" value="DROPDOWN" />
+       </SelectionState>
+     </selectionStates>
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"$PROJECT_DIR$\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	(revision 4f6ece16be6f02f2dbafa328f24458f0f7c007d0)
++++ b/.idea/vcs.xml	(date 1748343115810)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++    <mapping directory="" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
