@@ -3,11 +3,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tv_main">권한이 필요합니다.</string>
+    <string name="intent_name">nowPlaying</string>
     <string name="btn_main">설정 열기</string>
     <string name="tv_rv_item_title">제목</string>
     <string name="tv_rv_item_artist">가수</string>
     <string name="tv_rv_item_time">분:초</string>
     <string name="alert_btn_positive">예</string>
     <string name="alert_btn_negative">아니요</string>
+
 
 </resources>
