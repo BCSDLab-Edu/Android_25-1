@@ -1,5 +1,6 @@
 package com.example.bcsd_android_2025_1
 
+
 import android.content.ContentUris
 import android.net.Uri
 import android.view.LayoutInflater
@@ -12,7 +13,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 class MusicAdapter(
-    private val musicList: List<MusicItem>
+    private val musicList: List<MusicItem>,
+    private val onItemClick: (MusicItem) -> Unit
 ) : RecyclerView.Adapter<MusicAdapter.MusicViewHolder>() {
 
     inner class MusicViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -34,6 +36,10 @@ class MusicAdapter(
         holder.title.text = musicItem.title
         holder.artist.text = musicItem.artist
         holder.duration.text = musicItem.duration
+
+        holder.itemView.setOnClickListener {
+            onItemClick(musicItem)
+        }
 
         val albumArtUri = ContentUris.withAppendedId(
             Uri.parse("content://media/external/audio/albumart"),
