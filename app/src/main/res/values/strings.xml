@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="app_name">My Appliction</string>
+    <string name="permission_message">파일을 보려면 권한을 허용해야 합니다.</string>
+    <string name="request_permission_button">설정으로 이동</string>
+    <string name="default_title">제목 없음</string>
+    <string name="default_artist">가수 없음</string>
+    <string name="play_pause_button_description">재생 또는 일시정지</string>
 </resources>
