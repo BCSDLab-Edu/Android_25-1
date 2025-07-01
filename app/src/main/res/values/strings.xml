@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="app_name">MusicPlayer</string>
+    <string name="now_playing_default">재생 중: 없음</string>
+    <string name="text_permission_needed">권한이 필요합니다.</string>
+    <string name="text_request_permission">권한 요청</string>
+    <string name="text_open_settings">설정 열기</string>
+    <string name="music_title">제목</string>
+    <string name="music_artist">아티스트</string>
+    <string name="music_time">00:00</string>
 </resources>
