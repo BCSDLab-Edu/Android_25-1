@@ -6,13 +6,15 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MusicAdapter(private val musicList: List<Music>) :
-    RecyclerView.Adapter<MusicAdapter.MusicViewHolder>() {
+class MusicAdapter(
+    private val musicList: List<Music>,
+    private val onItemClick: (Music) -> Unit
+) : RecyclerView.Adapter<MusicAdapter.MusicViewHolder>() {
 
     class MusicViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val title: TextView = view.findViewById(R.id.titleText)
-        val artist: TextView = view.findViewById(R.id.artistText)
-        val duration: TextView = view.findViewById(R.id.durationText)
+        val title: TextView = view.findViewById(R.id.title_text)
+        val artist: TextView = view.findViewById(R.id.artist_text)
+        val duration: TextView = view.findViewById(R.id.duration_text)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MusicViewHolder {
@@ -26,6 +28,7 @@ class MusicAdapter(private val musicList: List<Music>) :
         holder.title.text = music.title
         holder.artist.text = music.artist
         holder.duration.text = formatDuration(music.duration)
+        holder.itemView.setOnClickListener { onItemClick(music) }
     }
 
     override fun getItemCount(): Int = musicList.size
