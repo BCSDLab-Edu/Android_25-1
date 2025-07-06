@@ -1,14 +1,87 @@
 package com.example.bcsd_android_2025_1
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.os.Handler
+import android.os.Looper
+import android.os.SystemClock
+import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var timeTextView: TextView
+    private lateinit var startPauseButton:Button
+    private lateinit var stopButton:Button
+    private lateinit var lapButton:Button
+    private lateinit var recyclerViewAdapter: RecyclerViewAdapter
+    private lateinit var recyclerView:RecyclerView
+
+    private var isRunning = false
+    private var startTime = 0L
+    private var pauseOffset = 0L
+
+
+    private val handler = Handler(Looper.getMainLooper())
+    private val timeRunnable = object:Runnable{
+        override fun run(){
+            val elapsed = SystemClock.elapsedRealtime() - startTime
+            val min = (elapsed / 1000) / 60
+            val sec = (elapsed / 1000) % 60
+            val mil = (elapsed % 1000) / 10
+            timeTextView.text = getString(R.string.time_text, min, sec, mil)
+            handler.postDelayed(this,10)
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        timeTextView = findViewById(R.id.time_textview)
+        startPauseButton = findViewById(R.id.start_pause_toggle_button)
+        stopButton = findViewById(R.id.stop_button)
+        lapButton = findViewById(R.id.lap_button)
+        recyclerView = findViewById(R.id.recycler_view)
+        recyclerViewAdapter = RecyclerViewAdapter()
+        recyclerView.adapter = recyclerViewAdapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        startPauseButton.setOnClickListener {
+            if(!isRunning){
+                startPauseButton.text = getString(R.string.pause_text)
+                startTime = SystemClock.elapsedRealtime() - pauseOffset
+                handler.post(timeRunnable)
+                isRunning=true
+            }else{
+                startPauseButton.text=getString(R.string.start_text)
+                pauseOffset = SystemClock.elapsedRealtime() - startTime
+                handler.removeCallbacks(timeRunnable)
+                isRunning=false
+            }
+        }
+
+        stopButton.setOnClickListener {
+            handler.removeCallbacks(timeRunnable)
+            timeTextView.text = getString(R.string.default_time_text)
+            startPauseButton.text = getString(R.string.start_text)
+            isRunning = false
+            pauseOffset = 0L
+            recyclerViewAdapter.removeAllItems()
+        }
+
+        lapButton.setOnClickListener {
+            if(isRunning){
+                val elapsed = SystemClock.elapsedRealtime() - startTime
+                val min = (elapsed / 1000) / 60
+                val sec = (elapsed / 1000) % 60
+                val mil = (elapsed % 1000) / 10
+                val nowTime = getString(R.string.time_text, min, sec, mil)
+
+                recyclerViewAdapter.addLapItem(nowTime)
+                recyclerView.scrollToPosition(0)
+            }
+        }
     }
 }
