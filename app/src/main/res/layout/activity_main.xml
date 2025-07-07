@@ -8,12 +8,52 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tv_main_timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello Android!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/tv_time"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"/>
+
+    <Button
+        android:id="@+id/btn_main_lap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_lap"
+        app:layout_constraintTop_toBottomOf="@id/tv_main_timer"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <Button
+        android:id="@+id/btn_main_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_main_lap"
+        app:layout_constraintTop_toTopOf="@id/btn_main_lap"/>
+
+
+    <Button
+        android:id="@+id/btn_main_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_stop"
+        app:layout_constraintStart_toEndOf="@id/btn_main_lap"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_main_lap"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_main_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btn_main_lap"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
