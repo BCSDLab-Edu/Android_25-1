@@ -5,14 +5,11 @@ import android.os.Bundle
 import android.os.SystemClock
 import android.widget.Button
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -80,7 +77,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun startTimer() {
         isRunning = true
-        startButton.text = "Pause"
+        startButton.text = getString(R.string.main_pause)
         startTime = SystemClock.elapsedRealtime() // 시작시점
 
         timerJob = lifecycleScope.launch {
@@ -97,7 +94,7 @@ class MainActivity : AppCompatActivity() {
         isRunning = false
         beforeTime += SystemClock.elapsedRealtime() - startTime  // 이전 누적 시간에 이번에 흐른 시간 더함.
         timerJob?.cancel()
-        startButton.text = "Start"
+        startButton.text = getString(R.string.main_start)
     }
 
     private fun formatTime(ms: Long): String {
@@ -113,8 +110,8 @@ class MainActivity : AppCompatActivity() {
         startTime = 0L
         beforeTime = 0L
         lastLapTime = 0L
-        timerText.text = "00 : 00 : 00"
-        startButton.text = "Start"
+        timerText.text = getString(R.string.main_default_time)
+        startButton.text = getString(R.string.main_start)
 
         lapList.clear()
         lapAdapter.notifyDataSetChanged()

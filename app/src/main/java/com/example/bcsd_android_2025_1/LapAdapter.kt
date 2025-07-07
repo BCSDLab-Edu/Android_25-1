@@ -1,12 +1,10 @@
 package com.example.bcsd_android_2025_1
 
 import LapData
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 
 class LapAdapter(private val lapList: List<LapData>) :
