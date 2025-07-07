@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var timerText: TextView
     private lateinit var startButton: Button
+    private lateinit var stopButton: Button
 
     private var isRunning = false
     private var startTime = 0L // 시작시간
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         timerText = findViewById(R.id.main_text_timer)
         startButton = findViewById(R.id.main_button_start)
+        stopButton = findViewById(R.id.main_button_stop)
 
         startButton.setOnClickListener {
             if (!isRunning) {
@@ -36,6 +38,10 @@ class MainActivity : AppCompatActivity() {
             } else {
                 pauseTimer()
             }
+        }
+
+        stopButton.setOnClickListener {
+            stopTimer()
         }
     }
 
@@ -66,5 +72,14 @@ class MainActivity : AppCompatActivity() {
         val seconds = (ms / 1000) % 60
         val millis = (ms % 1000) / 10
         return String.format("%02d : %02d : %02d", minutes, seconds, millis)
+    }
+
+    private fun stopTimer() {
+        isRunning = false
+        timerJob?.cancel() // 코루틴 정지 + 기록 초기화
+        startTime = 0L
+        beforeTime = 0L
+        timerText.text = "00 : 00 : 00"
+        startButton.text = "Start"
     }
 }
