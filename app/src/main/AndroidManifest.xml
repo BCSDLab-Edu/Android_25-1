@@ -13,6 +13,12 @@
         android:theme="@style/Theme.BCSD_Android_20251"
         tools:targetApi="31">
         <activity
+            android:name=".LapAdapter.kt"
+            android:exported="false" />
+        <activity
+            android:name=".LapData"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

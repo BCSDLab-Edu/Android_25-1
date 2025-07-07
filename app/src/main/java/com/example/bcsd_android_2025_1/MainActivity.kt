@@ -1,5 +1,6 @@
 package com.example.bcsd_android_2025_1
 
+import LapData
 import android.os.Bundle
 import android.os.SystemClock
 import android.widget.Button
@@ -12,17 +13,24 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var timerText: TextView
     private lateinit var startButton: Button
     private lateinit var stopButton: Button
+    private lateinit var lapButton: Button
+    private lateinit var lapRecyclerView: RecyclerView
+    private lateinit var lapAdapter: LapAdapter
+    private val lapList = mutableListOf<LapData>()
 
     private var isRunning = false
     private var startTime = 0L // 시작시간
     private var beforeTime = 0L // 누적시간
     private var timerJob: Job? = null // 중단 위함
+    private var lastLapTime = 0L // 마지막 기록된 시간
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +39,12 @@ class MainActivity : AppCompatActivity() {
         timerText = findViewById(R.id.main_text_timer)
         startButton = findViewById(R.id.main_button_start)
         stopButton = findViewById(R.id.main_button_stop)
+        lapButton = findViewById(R.id.main_button_lap)
+        lapRecyclerView = findViewById(R.id.main_recycler_lap)
+
+        lapAdapter = LapAdapter(lapList)
+        lapRecyclerView.adapter = lapAdapter
+        lapRecyclerView.layoutManager = LinearLayoutManager(this)
 
         startButton.setOnClickListener {
             if (!isRunning) {
@@ -42,6 +56,25 @@ class MainActivity : AppCompatActivity() {
 
         stopButton.setOnClickListener {
             stopTimer()
+        }
+
+        lapButton.setOnClickListener {
+            if (!isRunning) return@setOnClickListener
+
+            val now = SystemClock.elapsedRealtime()
+            val total = now - startTime + beforeTime
+            val section = if (lapList.isEmpty()) total else total - lastLapTime
+            lastLapTime = total
+
+            val lap = LapData(
+                number = lapList.size + 1,
+                sectionTime = formatTime(section),
+                totalTime = formatTime(total)
+            )
+
+            lapList.add(0, lap)
+            lapAdapter.notifyItemInserted(0)
+            lapRecyclerView.scrollToPosition(0)
         }
     }
 
@@ -79,7 +112,11 @@ class MainActivity : AppCompatActivity() {
         timerJob?.cancel() // 코루틴 정지 + 기록 초기화
         startTime = 0L
         beforeTime = 0L
+        lastLapTime = 0L
         timerText.text = "00 : 00 : 00"
         startButton.text = "Start"
+
+        lapList.clear()
+        lapAdapter.notifyDataSetChanged()
     }
 }
