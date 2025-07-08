@@ -1,17 +1,19 @@
 package com.example.bcsd_android_2025_1
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.os.SystemClock
 import android.widget.Button
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,17 +25,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var lapAdapter: LapAdapter
 
     private var startTime = 0L
-    private var pauseOffset = 0L
+    private var elapsedTime = 0L
     private var isRunning = false
-    private var handler = Handler(Looper.getMainLooper())
+    private var timeJob: Job? = null
 
-    private val updateTimer = object : Runnable {
-        override fun run() {
-            val elapsed = SystemClock.elapsedRealtime() - startTime
-            timerTextView.text = nowTime(elapsed)
-            handler.postDelayed(this, 10)
-        }
-    }
+    private var coroutineScope = CoroutineScope(Dispatchers.Main)
+
     private fun nowTime(ms: Long): String {
         val minutes = (ms / 60000).toInt()
         val seconds = ((ms % 60000) / 1000).toInt()
@@ -78,26 +75,39 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startTimer() {
-        startTime = SystemClock.elapsedRealtime() - pauseOffset
-        handler.post(updateTimer)
+        startTime = SystemClock.elapsedRealtime() - elapsedTime
         isRunning = true
         startPauseButton.text = getString(R.string.text_pause)
+
+        timeJob = coroutineScope.launch {
+            while (isActive) {
+                val elapsed = SystemClock.elapsedRealtime() - startTime
+                timerTextView.text = nowTime(elapsed)
+                delay(10L)
+            }
+        }
     }
 
     private fun pauseTimer() {
-        pauseOffset = SystemClock.elapsedRealtime() - startTime
-        handler.removeCallbacks(updateTimer)
+        elapsedTime = SystemClock.elapsedRealtime() - startTime
+        timeJob?.cancel()
         isRunning = false
         startPauseButton.text = getString(R.string.text_start)
     }
 
     private fun stopTimer() {
-        handler.removeCallbacks(updateTimer)
+        timeJob?.cancel()
         startTime = 0L
-        pauseOffset = 0L
+        elapsedTime = 0L
         isRunning = false
         timerTextView.text = getString(R.string.start_time)
         startPauseButton.text = getString(R.string.text_start)
         lapAdapter.clearLaps()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        timeJob?.cancel()
+        coroutineScope.cancel()
     }
 }
