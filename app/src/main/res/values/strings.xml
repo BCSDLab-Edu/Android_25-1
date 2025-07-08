@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="start_time">00 : 00 : 00</string>
+    <string name="now_time">%02d : %02d :%02d</string>
+    <string name="text_pause">Pause</string>
+    <string name="text_start">Start</string>
+    <string name="text_stop">Stop</string>
+    <string name="text_lap">Lap</string>
 </resources>
