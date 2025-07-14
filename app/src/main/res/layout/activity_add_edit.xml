@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_add_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_add_title"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="30dp"/>
+
+        <EditText
+            android:id="@+id/edit_tv_add_word"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            android:minHeight="48dp"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="@string/edit_tv_label_word"
+
+            app:layout_constraintTop_toBottomOf="@id/tv_add_title"
+            android:layout_marginTop="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <EditText
+            android:id="@+id/edit_tv_add_mean"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:importantForAutofill="no"
+            android:minHeight="48dp"
+            android:inputType="text"
+            android:hint="@string/edit_tv_label_mean"
+            android:scrollbars="horizontal"
+            android:scrollHorizontally="true"
+            android:maxLines="1"
+            app:layout_constraintTop_toBottomOf="@id/edit_tv_add_word"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_add_add"
+            app:layout_constraintStart_toStartOf="@id/edit_tv_add_mean"
+            app:layout_constraintTop_toBottomOf="@id/edit_tv_add_mean"
+            android:layout_marginTop="25dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

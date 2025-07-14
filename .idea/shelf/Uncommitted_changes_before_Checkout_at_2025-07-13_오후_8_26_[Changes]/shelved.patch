@@ -1,0 +1,49 @@
+Index: app/src/main/java/com/example/bcsd_android_2025_1/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.bcsd_android_2025_1\r\nimport android.os.Bundle\r\nimport android.widget.Button\r\nimport android.widget.TextView\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport androidx.lifecycle.lifecycleScope\r\nimport androidx.recyclerview.widget.LinearLayoutManager\r\nimport androidx.recyclerview.widget.RecyclerView\r\nimport kotlinx.coroutines.Job\r\nimport kotlinx.coroutines.delay\r\nimport kotlinx.coroutines.isActive\r\nimport kotlinx.coroutines.launch\r\n\r\nclass MainActivity : AppCompatActivity() {\r\n\r\n    private lateinit var tvTimer : TextView\r\n    private lateinit var btnLap : Button\r\n    private lateinit var btnStart : Button\r\n    private lateinit var btnStop : Button\r\n\r\n    private lateinit var rvRecord : RecyclerView\r\n    private lateinit var lapAdapter: LapAdapter\r\n\r\n    private var isRunning = false\r\n    private var runningTime = 0L\r\n    private var job: Job? = null\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        setContentView(R.layout.activity_main)\r\n\r\n        tvTimer = findViewById(R.id.tv_main_timer)\r\n        btnLap = findViewById(R.id.btn_main_lap)\r\n        btnStart = findViewById(R.id.btn_main_start)\r\n        btnStop  = findViewById(R.id.btn_main_stop)\r\n        rvRecord = findViewById(R.id.rv_main_record)\r\n        rvRecord.layoutManager = LinearLayoutManager(this)\r\n        lapAdapter = LapAdapter()\r\n        rvRecord.adapter = lapAdapter\r\n\r\n        btnStart.setOnClickListener {\r\n            if (isRunning) {\r\n                pauseTimer()\r\n            } else {\r\n                startTimer()\r\n            }\r\n        }\r\n\r\n        btnStop.setOnClickListener {\r\n            stopTimer()\r\n        }\r\n\r\n        btnLap.setOnClickListener {\r\n            if (isRunning) {\r\n                lapAdapter.addLap(formatTime(runningTime))\r\n            }\r\n        }\r\n    }\r\n\r\n    private fun startTimer() {\r\n        val startTime = System.currentTimeMillis() - runningTime\r\n        job = lifecycleScope.launch {\r\n            while (isActive) {\r\n                runningTime = System.currentTimeMillis() - startTime\r\n                tvTimer.text = formatTime(runningTime)\r\n                delay(10)\r\n            }\r\n        }\r\n        isRunning = true\r\n        btnStart.text = getString(R.string.btn_pause)\r\n    }\r\n\r\n    private fun pauseTimer() {\r\n        job?.cancel()\r\n        isRunning = false\r\n        btnStart.text = getString(R.string.btn_start)\r\n    }\r\n\r\n    private fun stopTimer() {\r\n        job?.cancel()\r\n        runningTime = 0L\r\n        isRunning = false\r\n        tvTimer.text = getString(R.string.tv_time)\r\n        btnStart.text = getString(R.string.btn_start)\r\n        lapAdapter.clear()\r\n    }\r\n\r\n    private fun formatTime(ms: Long): String {\r\n        val min = (ms/1000)/60\r\n        val sec = (ms/1000)%60\r\n        val millisec = (ms%1000) / 10\r\n        return String.format(\"%02d:%02d:%02d\", min, sec, millisec)\r\n    }\r\n\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/bcsd_android_2025_1/MainActivity.kt b/app/src/main/java/com/example/bcsd_android_2025_1/MainActivity.kt
+--- a/app/src/main/java/com/example/bcsd_android_2025_1/MainActivity.kt	(revision a566fccc5cae9f9de481ed1c810a31555d2dca50)
++++ b/app/src/main/java/com/example/bcsd_android_2025_1/MainActivity.kt	(date 1751870590293)
+@@ -10,6 +10,7 @@
+ import kotlinx.coroutines.delay
+ import kotlinx.coroutines.isActive
+ import kotlinx.coroutines.launch
++import java.util.Locale
+ 
+ class MainActivity : AppCompatActivity() {
+ 
+@@ -89,7 +90,7 @@
+         val min = (ms/1000)/60
+         val sec = (ms/1000)%60
+         val millisec = (ms%1000) / 10
+-        return String.format("%02d:%02d:%02d", min, sec, millisec)
++        return String.format(Locale.getDefault(),"%02d:%02d:%02d", min, sec, millisec)
+     }
+ 
+ 
+Index: app/src/main/res/layout/item.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"wrap_content\">\r\n\r\n    <TextView\r\n        android:id=\"@+id/tv_item_message\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"@string/tv_message\"\r\n        android:textSize=\"15sp\"/>\r\n    <TextView\r\n        android:id=\"@+id/tv_item_record\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"@string/tv_record\"\r\n        android:textSize=\"15sp\"\r\n        android:layout_marginStart=\"5dp\"/>\r\n\r\n\r\n</LinearLayout>
+===================================================================
+diff --git a/app/src/main/res/layout/item.xml b/app/src/main/res/layout/item.xml
+--- a/app/src/main/res/layout/item.xml	(revision a566fccc5cae9f9de481ed1c810a31555d2dca50)
++++ b/app/src/main/res/layout/item.xml	(date 1752170182341)
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content">
+ 
+@@ -18,4 +19,5 @@
+         android:layout_marginStart="5dp"/>
+ 
+ 
++
+ </LinearLayout>
+\ No newline at end of file

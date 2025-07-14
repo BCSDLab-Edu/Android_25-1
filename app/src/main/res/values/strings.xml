@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="tv_main_note_word">기본 메모 제목</string>
+    <string name="tv_main_note_mean">기본 메모 내용</string>
+    <string name="image_btn_delete">삭제 버튼</string>
+    <string name="image_btn_edit">수정 버튼</string>
+    <string name="image_btn_plus">추가 버튼</string>
+
+    <string name="tv_add_title">단어 추가</string>
+    <string name="edit_tv_add_word">단어</string>
+    <string name="edit_tv_add_mean">뜻</string>
+    <string name="btn_add_add">추가</string>
+
+    <string name="edit_tv_label_word">단어를 입력하세요</string>
+    <string name="edit_tv_label_mean">뜻을 입력하세요</string>
+
+    <string name="item_word">단어</string>
+    <string name="item_mean">뜻</string>
 </resources>
