@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="add">추가</string>
+    <string name="word">단어</string>
+    <string name="meaning">뜻</string>
+    <string name="add_word">단어 추가</string>
 </resources>
