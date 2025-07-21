@@ -1,12 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("org.jetbrains.kotlin.kapt")
     id("com.google.devtools.ksp") version "2.1.10-1.0.29"
 
 
 }
-
-apply(plugin = "kotlin-kapt")
 
 android {
     namespace = "com.example.bcsd_android_2025_1"
@@ -26,6 +25,7 @@ android {
 
     buildFeatures {
         dataBinding = true
+        viewBinding = true
     }
 
 
@@ -68,5 +68,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.savedstate)
 
     implementation(libs.kotlinx.coroutines.android)
-    ksp("androidx.room:room-compiler:2.7.2")
+
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    kapt("com.github.bumptech.glide:compiler:4.16.0")
 }

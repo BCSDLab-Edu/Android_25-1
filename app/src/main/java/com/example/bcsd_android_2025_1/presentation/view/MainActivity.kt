@@ -1,4 +1,4 @@
-package com.example.bcsd_android_2025_1
+package com.example.bcsd_android_2025_1.presentation.view
 
 import android.content.Intent
 import android.os.Build
@@ -7,7 +7,13 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.bcsd_android_2025_1.WordAdapter
+import com.example.bcsd_android_2025_1.data.model.Word
+import com.example.bcsd_android_2025_1.data.repository.WordRepository
+import com.example.bcsd_android_2025_1.data.room.AppDatabase
 import com.example.bcsd_android_2025_1.databinding.ActivityMainBinding
+import com.example.bcsd_android_2025_1.presentation.viewmodel.WordViewModel
+import com.example.bcsd_android_2025_1.presentation.viewmodel.WordViewModelFactory
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -23,13 +29,24 @@ class MainActivity : AppCompatActivity() {
             val updateWord = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 result.data?.getSerializableExtra("updated_word", Word::class.java)
             } else {
-                intent.getSerializableExtra("updated_word") as? Word
+                result.data?.getSerializableExtra("updated_word") as? Word
             }
             updateWord?.let {
                 wordViewModel.update(it)
                 selectedWord = it
                 showSelectedWord(it)
             }
+
+            val newWord = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                result.data?.getSerializableExtra("new_word", Word::class.java)
+            } else {
+                result.data?.getSerializableExtra("new_word") as? Word
+            }
+
+            newWord?.let {
+                wordViewModel.insert(it)
+            }
+
         }
     }
 
@@ -38,7 +55,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        wordViewModel = ViewModelProvider(this)[WordViewModel::class.java]
+        val dao = AppDatabase.getDatabase(applicationContext).wordDao()
+        val repository = WordRepository(dao)
+        val factory = WordViewModelFactory(repository)
+        wordViewModel = ViewModelProvider(this, factory)[WordViewModel::class.java]
 
         wordAdapter = WordAdapter { word ->
             selectedWord = word
@@ -52,30 +72,32 @@ class MainActivity : AppCompatActivity() {
             wordAdapter.submitList(words)
         }
 
-        binding.imageBtnMainDelete.setOnClickListener{
-            selectedWord?.let{
-                wordViewModel.delete(it)
-                clearSelectedWord()
-            }
-        }
         binding.imageBtnMainEdit.setOnClickListener {
-            selectedWord?.let{
+            selectedWord?.let {
                 val intent = Intent(this, AddEditActivity::class.java)
-                intent.putExtra("word_to_edit",it)
+                intent.putExtra("word_to_edit", it)
                 editWordLauncher.launch(intent)
             }
         }
+
         binding.imageBtnMainPlus.setOnClickListener {
-            startActivity(Intent(this, AddEditActivity::class.java))
+            val intent = Intent(this, AddEditActivity::class.java)
+            editWordLauncher.launch(intent)
         }
+
+        binding.imageBtnMainDelete.setOnClickListener {
+            selectedWord?.let {
+                wordViewModel.delete(it)
+                selectedWord = null
+                binding.tvMainWord.text = ""
+                binding.tvMainMean.text = ""
+            }
+        }
+
     }
+
     private fun showSelectedWord(word: Word) {
         binding.tvMainWord.text = word.word
         binding.tvMainMean.text = word.meaning
-    }
-    private fun clearSelectedWord() {
-        binding.tvMainWord.text = getString(R.string.tv_main_note_word)
-        binding.tvMainMean.text = getString(R.string.tv_main_note_mean)
-        selectedWord = null
     }
 }

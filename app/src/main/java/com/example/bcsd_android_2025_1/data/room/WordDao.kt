@@ -1,15 +1,12 @@
-package com.example.bcsd_android_2025_1
+
+package com.example.bcsd_android_2025_1.data.room
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
+import com.example.bcsd_android_2025_1.data.model.Word
 
 @Dao
-interface WordRoom{
+interface WordDao {
     @Query("SELECT * FROM word_table ORDER BY id DESC")
     fun getAllWords(): LiveData<List<Word>>
 
