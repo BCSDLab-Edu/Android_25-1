@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.bcsd_android_2025_1.databinding.ItemWordBinding
 
 class WordAdapter (
@@ -14,6 +15,13 @@ class WordAdapter (
     inner class WordViewHolder(private val binding: ItemWordBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(word: WordListData) {
             binding.word = word
+            if (!word.imageUri.isNullOrEmpty()) {
+                Glide.with(binding.recyclerviewImageview.context)
+                    .load(word.imageUri)
+                    .into(binding.recyclerviewImageview)
+            } else {
+                binding.recyclerviewImageview.setImageDrawable(null)
+            }
             binding.root.setOnClickListener { onTopClick(word) }
             binding.executePendingBindings()
         }

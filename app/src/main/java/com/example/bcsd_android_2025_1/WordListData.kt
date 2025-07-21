@@ -8,5 +8,6 @@ data class WordListData (
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     var word: String,
-    var meaning: String
+    var meaning: String,
+    val imageUri: String? = null
 )
