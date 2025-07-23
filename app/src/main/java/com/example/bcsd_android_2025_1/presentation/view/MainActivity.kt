@@ -12,6 +12,9 @@ import com.example.bcsd_android_2025_1.data.model.Word
 import com.example.bcsd_android_2025_1.data.repository.WordRepository
 import com.example.bcsd_android_2025_1.data.room.AppDatabase
 import com.example.bcsd_android_2025_1.databinding.ActivityMainBinding
+import com.example.bcsd_android_2025_1.domain.usecase.DeleteWord
+import com.example.bcsd_android_2025_1.domain.usecase.InsertWord
+import com.example.bcsd_android_2025_1.domain.usecase.UpdateWord
 import com.example.bcsd_android_2025_1.presentation.viewmodel.WordViewModel
 import com.example.bcsd_android_2025_1.presentation.viewmodel.WordViewModelFactory
 
@@ -57,7 +60,13 @@ class MainActivity : AppCompatActivity() {
 
         val dao = AppDatabase.getDatabase(applicationContext).wordDao()
         val repository = WordRepository(dao)
-        val factory = WordViewModelFactory(repository)
+
+        val insert = InsertWord(repository)
+        val update = UpdateWord(repository)
+        val delete = DeleteWord(repository)
+
+        val allWords = repository.getAllWords()
+        val factory = WordViewModelFactory(insert, update, delete, allWords)
         wordViewModel = ViewModelProvider(this, factory)[WordViewModel::class.java]
 
         wordAdapter = WordAdapter { word ->
