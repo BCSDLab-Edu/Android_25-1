@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+
+        <TextView
+            android:id="@+id/item_tv_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/item_word"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="94dp"/>
+
+        <TextView
+            android:id="@+id/item_tv_mean"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/item_mean"
+            android:textSize="20sp"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="94dp"/>
+        
+        <ImageView
+            android:id="@+id/item_iv_preview"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"/>
+
+    </FrameLayout>
+
+</layout>
