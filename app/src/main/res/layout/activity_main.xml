@@ -4,7 +4,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.bcsd_android_2025_1.WordViewModel" />
+            type="com.example.bcsd_android_2025_1.app.WordViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

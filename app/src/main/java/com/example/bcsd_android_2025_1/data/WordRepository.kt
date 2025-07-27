@@ -1,6 +1,7 @@
-package com.example.bcsd_android_2025_1
+package com.example.bcsd_android_2025_1.data
 
 import androidx.lifecycle.LiveData
+import com.example.bcsd_android_2025_1.domain.Word
 
 class WordRepository(private val dao: WordDao) {
     val allWords : LiveData<List<Word>> = dao.getAllWords()

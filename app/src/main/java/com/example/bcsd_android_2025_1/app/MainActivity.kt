@@ -1,4 +1,4 @@
-package com.example.bcsd_android_2025_1
+package com.example.bcsd_android_2025_1.app
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.bcsd_android_2025_1.domain.Word
 import com.example.bcsd_android_2025_1.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

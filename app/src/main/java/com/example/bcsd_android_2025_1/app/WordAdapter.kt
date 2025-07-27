@@ -1,11 +1,15 @@
-package com.example.bcsd_android_2025_1
+package com.example.bcsd_android_2025_1.app
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bcsd_android_2025_1.domain.Word
 import com.example.bcsd_android_2025_1.databinding.ItemWordBinding
+import android.net.Uri
+import android.view.View
+import com.bumptech.glide.Glide
 
 class WordAdapter(
     private val onItemClick: (Word) -> Unit,
@@ -17,6 +21,17 @@ class WordAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(word: Word) {
             binding.word = word
+
+            if (!word.imageUri.isNullOrEmpty()) {
+                binding.ivWordImage.visibility = View.VISIBLE
+                Glide.with(binding.root.context)
+                    .load(Uri.parse(word.imageUri))
+                    .centerCrop()
+                    .into(binding.ivWordImage)
+            } else {
+                binding.ivWordImage.visibility = View.GONE
+            }
+
             binding.root.setOnClickListener { onItemClick(word) }
             binding.btnEdit.setOnClickListener { onEditClick(word) }
             binding.btnDelete.setOnClickListener { onDeleteClick(word) }

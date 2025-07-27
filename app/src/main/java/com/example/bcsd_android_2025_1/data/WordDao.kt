@@ -1,7 +1,8 @@
-package com.example.bcsd_android_2025_1
+package com.example.bcsd_android_2025_1.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.bcsd_android_2025_1.domain.Word
 
 @Dao
 interface WordDao {

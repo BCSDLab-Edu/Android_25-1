@@ -1,7 +1,10 @@
-package com.example.bcsd_android_2025_1
+package com.example.bcsd_android_2025_1.app
 
 import android.app.Application
 import androidx.lifecycle.*
+import com.example.bcsd_android_2025_1.domain.Word
+import com.example.bcsd_android_2025_1.data.WordDatabase
+import com.example.bcsd_android_2025_1.data.WordRepository
 import kotlinx.coroutines.launch
 
 class WordViewModel(application: Application) : AndroidViewModel(application) {

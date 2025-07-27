@@ -1,11 +1,12 @@
-package com.example.bcsd_android_2025_1
+package com.example.bcsd_android_2025_1.data
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.bcsd_android_2025_1.domain.Word
 
-@Database(entities = [Word::class], version = 1)
+@Database(entities = [Word::class], version = 2)
 abstract class WordDatabase : RoomDatabase() {
     abstract fun wordDao(): WordDao
 
@@ -19,7 +20,9 @@ abstract class WordDatabase : RoomDatabase() {
                     context.applicationContext,
                     WordDatabase::class.java,
                     "word_database"
-                ).build()
+                )
+                    .fallbackToDestructiveMigration()
+                    .build()
                 INSTANCE = instance
                 instance
             }
