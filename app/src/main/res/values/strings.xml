@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
+    <string name="search_repository">레포지토리 검색</string>
 </resources>
